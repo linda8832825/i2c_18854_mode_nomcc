@@ -11,8 +11,8 @@
 uint8_t leader_feedback=0x00;
 
 void main(void) {
-    I2C_Master_Wait();
     init();
+    PORTA=0X00;
     master_init();//mode一開始先當master
     
     //發信號給leader(slave)
@@ -24,20 +24,22 @@ void main(void) {
     //跟leader(slave)要編號
     I2C_Master_Start(); 
     I2C_Master_Write((LEADER_ID << 1)|1); //7 bit address + Read(1)
-    leader_feedback=I2C_Master_Read(0);//接收leader要定義的編號
-    I2C_Master_Stop(); 
+    leader_feedback=I2C_Master_Read(1);//接收leader要定義的編號
+    I2C_Master_Stop();//會過2s才stop
     
     //驗證接收到的編號是否正確
     if(leader_feedback==0x5A){
-        RA4=1;
-        RA5=0;
+        RA2=1;
+        //切換成SLAVE
+        init();
+        slave_init(leader_feedback);//將編號(0X5A)設為成為slave的mode的ID
+        RA3=1;
+        for(int i=0;i<=4000;i++){
+            SSP1CON1bits.CKP = 0;
+        }
     }
     
-    //切換成SLAVE
-    slave_init(leader_feedback);//將編號(0X5A)設為成為slave的mode的ID
-    
     //將資料(0xDB)傳給leader
-    
     
     while(1);
 }

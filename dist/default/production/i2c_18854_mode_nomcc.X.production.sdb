@@ -39,7 +39,9 @@
 [v _slave_init slave_init `(v  1 e 1 0 ]
 "5 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X/slave/i2c_slave.h
 [v _z z `uc  1 e 1 0 ]
-"592 C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h
+"385 C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"592
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
 "654
 [v _TRISB TRISB `VEuc  1 e 1 @18 ]
@@ -317,16 +319,18 @@
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "39344
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
-"39599
-[v _RA4 RA4 `VEb  1 e 0 @100 ]
-"39620
-[v _RA5 RA5 `VEb  1 e 0 @101 ]
+"39557
+[v _RA2 RA2 `VEb  1 e 0 @98 ]
+"39578
+[v _RA3 RA3 `VEb  1 e 0 @99 ]
 "11 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X\main_mode.c
 [v _leader_feedback leader_feedback `uc  1 e 1 0 ]
 "13
 [v _main main `(v  1 e 1 0 ]
 {
-"43
+"37
+[v main@i i `i  1 a 2 5 ]
+"45
 } 0
 "4 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X\slave/init_slave.c
 [v _slave_init slave_init `(v  1 e 1 0 ]
