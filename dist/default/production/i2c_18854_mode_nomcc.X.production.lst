@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Tue Dec 15 16:50:27 2020
+                                                                                               Tue Dec 22 15:36:07 2020
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	16F18854
@@ -3693,8 +3693,8 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3679  0018                     _LATC	set	24
   3680  0017                     _LATB	set	23
   3681  0016                     _LATA	set	22
-  3682  0065                     _RA5	set	101
-  3683  0064                     _RA4	set	100
+  3682  0064                     _RA4	set	100
+  3683  0062                     _RA2	set	98
   3684  005E                     _PEIE	set	94
   3685  005F                     _GIE	set	95
   3686  0191                     _SSP1CON2bits	set	401
@@ -3753,1239 +3753,1279 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3739  0037  01F5               	clrf	__pbssCOMMON& (0+127)
   3740  0038  01F6               	clrf	(__pbssCOMMON+1)& (0+127)
   3741  0039  01F7               	clrf	(__pbssCOMMON+2)& (0+127)
-  3742  003A                     end_of_initialization:	
-  3743                           ;End of C runtime variable initialization code
-  3744                           
-  3745  003A                     __end_of__initialization:
-  3746  003A  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
-  3747  003B  0020               	movlb	0
-  3748  003C  3180  283E         	ljmp	_main	;jump to C main() function
-  3749                           
-  3750                           	psect	bssCOMMON
-  3751  0075                     __pbssCOMMON:
-  3752  0075                     _leader_feedback:
-  3753  0075                     	ds	1
-  3754  0076                     _y:
-  3755  0076                     	ds	1
-  3756  0077                     _z:
-  3757  0077                     	ds	1
-  3758                           
-  3759                           	psect	cstackCOMMON
-  3760  0070                     __pcstackCOMMON:
-  3761  0070                     ?_PMD_Initialize:
-  3762  0070                     ?_PIN_MANAGER_Initialize:	
-  3763                           ; 1 bytes @ 0x0
-  3764                           
-  3765  0070                     ?_OSCILLATOR_Initialize:	
+  3742  003A  01F8               	clrf	(__pbssCOMMON+3)& (0+127)
+  3743  003B                     end_of_initialization:	
+  3744                           ;End of C runtime variable initialization code
+  3745                           
+  3746  003B                     __end_of__initialization:
+  3747  003B  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
+  3748  003C  0020               	movlb	0
+  3749  003D  3180  283F         	ljmp	_main	;jump to C main() function
+  3750                           
+  3751                           	psect	bssCOMMON
+  3752  0075                     __pbssCOMMON:
+  3753  0075                     _ever_be_master:
+  3754  0075                     	ds	1
+  3755  0076                     _leader_feedback:
+  3756  0076                     	ds	1
+  3757  0077                     _y:
+  3758  0077                     	ds	1
+  3759  0078                     _z:
+  3760  0078                     	ds	1
+  3761                           
+  3762                           	psect	cstackCOMMON
+  3763  0070                     __pcstackCOMMON:
+  3764  0070                     ?_PMD_Initialize:
+  3765  0070                     ?_PIN_MANAGER_Initialize:	
   3766                           ; 1 bytes @ 0x0
   3767                           
-  3768  0070                     ?_init:	
+  3768  0070                     ?_OSCILLATOR_Initialize:	
   3769                           ; 1 bytes @ 0x0
   3770                           
-  3771  0070                     ?_I2C_Slave_Read:	
+  3771  0070                     ?_init:	
   3772                           ; 1 bytes @ 0x0
   3773                           
-  3774  0070                     ??_I2C_Slave_Read:	
+  3774  0070                     ?_I2C_Slave_Read:	
   3775                           ; 1 bytes @ 0x0
   3776                           
-  3777  0070                     ?_slave_init:	
+  3777  0070                     ??_I2C_Slave_Read:	
   3778                           ; 1 bytes @ 0x0
   3779                           
-  3780  0070                     ?_master_init:	
+  3780  0070                     ?_slave_init:	
   3781                           ; 1 bytes @ 0x0
   3782                           
-  3783  0070                     ?_I2C_Master_Wait:	
+  3783  0070                     ?_master_init:	
   3784                           ; 1 bytes @ 0x0
   3785                           
-  3786  0070                     ?_I2C_Master_Start:	
+  3786  0070                     ?_I2C_Master_Wait:	
   3787                           ; 1 bytes @ 0x0
   3788                           
-  3789  0070                     ?_I2C_Master_Stop:	
+  3789  0070                     ?_I2C_Master_Start:	
   3790                           ; 1 bytes @ 0x0
   3791                           
-  3792  0070                     ?_I2C_Master_Write:	
+  3792  0070                     ?_I2C_Master_Stop:	
   3793                           ; 1 bytes @ 0x0
   3794                           
-  3795  0070                     ?_I2C_Master_Read:	
+  3795  0070                     ?_I2C_Master_Write:	
   3796                           ; 1 bytes @ 0x0
   3797                           
-  3798  0070                     ?_main:	
+  3798  0070                     ?_I2C_Master_Read:	
   3799                           ; 1 bytes @ 0x0
   3800                           
-  3801                           
+  3801  0070                     ?_main:	
   3802                           ; 1 bytes @ 0x0
-  3803  0070                     	ds	1
-  3804  0071                     ??_PMD_Initialize:
-  3805  0071                     ??_PIN_MANAGER_Initialize:	
-  3806                           ; 1 bytes @ 0x1
-  3807                           
-  3808  0071                     ??_OSCILLATOR_Initialize:	
+  3803                           
+  3804                           
+  3805                           ; 1 bytes @ 0x0
+  3806  0070                     	ds	1
+  3807  0071                     ??_PMD_Initialize:
+  3808  0071                     ??_PIN_MANAGER_Initialize:	
   3809                           ; 1 bytes @ 0x1
   3810                           
-  3811  0071                     ??_init:	
+  3811  0071                     ??_OSCILLATOR_Initialize:	
   3812                           ; 1 bytes @ 0x1
   3813                           
-  3814  0071                     ??_slave_init:	
+  3814  0071                     ??_init:	
   3815                           ; 1 bytes @ 0x1
   3816                           
-  3817  0071                     ??_master_init:	
+  3817  0071                     ??_slave_init:	
   3818                           ; 1 bytes @ 0x1
   3819                           
-  3820  0071                     ??_I2C_Master_Wait:	
+  3820  0071                     ??_master_init:	
   3821                           ; 1 bytes @ 0x1
   3822                           
-  3823  0071                     ??_I2C_Master_Start:	
+  3823  0071                     ??_I2C_Master_Wait:	
   3824                           ; 1 bytes @ 0x1
   3825                           
-  3826  0071                     ??_I2C_Master_Stop:	
+  3826  0071                     ??_I2C_Master_Start:	
   3827                           ; 1 bytes @ 0x1
   3828                           
-  3829  0071                     ??_I2C_Master_Write:	
+  3829  0071                     ??_I2C_Master_Stop:	
   3830                           ; 1 bytes @ 0x1
   3831                           
-  3832  0071                     ??_I2C_Master_Read:	
+  3832  0071                     ??_I2C_Master_Write:	
   3833                           ; 1 bytes @ 0x1
   3834                           
-  3835  0071                     slave_init@address:	
+  3835  0071                     ??_I2C_Master_Read:	
   3836                           ; 1 bytes @ 0x1
   3837                           
-  3838  0071                     I2C_Master_Write@data:	
+  3838  0071                     slave_init@address:	
   3839                           ; 1 bytes @ 0x1
   3840                           
-  3841                           
+  3841  0071                     I2C_Master_Write@data:	
   3842                           ; 1 bytes @ 0x1
-  3843  0071                     	ds	1
-  3844  0072                     I2C_Master_Read@get:
-  3845                           
-  3846                           ; 1 bytes @ 0x2
-  3847  0072                     	ds	1
-  3848  0073                     I2C_Master_Read@temp:
-  3849                           
-  3850                           ; 1 bytes @ 0x3
-  3851  0073                     	ds	1
-  3852  0074                     ??_main:
-  3853                           
-  3854                           ; 1 bytes @ 0x4
-  3855  0074                     	ds	1
+  3843                           
+  3844                           
+  3845                           ; 1 bytes @ 0x1
+  3846  0071                     	ds	1
+  3847  0072                     I2C_Master_Read@get:
+  3848                           
+  3849                           ; 1 bytes @ 0x2
+  3850  0072                     	ds	1
+  3851  0073                     I2C_Master_Read@temp:
+  3852                           
+  3853                           ; 1 bytes @ 0x3
+  3854  0073                     	ds	1
+  3855  0074                     ??_main:
   3856                           
-  3857                           	psect	maintext
-  3858  003E                     __pmaintext:	
-  3859 ;;
-  3860 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
-  3861 ;;
-  3862 ;; *************** function _main *****************
-  3863 ;; Defined at:
-  3864 ;;		line 13 in file "main_mode.c"
-  3865 ;; Parameters:    Size  Location     Type
-  3866 ;;		None
-  3867 ;; Auto vars:     Size  Location     Type
-  3868 ;;		None
-  3869 ;; Return value:  Size  Location     Type
-  3870 ;;                  1    wreg      void 
-  3871 ;; Registers used:
-  3872 ;;		wreg, status,2, status,0, pclath, cstack
-  3873 ;; Tracked objects:
-  3874 ;;		On entry : B1F/0
-  3875 ;;		On exit  : 0/0
-  3876 ;;		Unchanged: 0/0
-  3877 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  3878 ;;      Params:         0       0       0       0       0       0       0       0
-  3879 ;;      Locals:         0       0       0       0       0       0       0       0
-  3880 ;;      Temps:          1       0       0       0       0       0       0       0
-  3881 ;;      Totals:         1       0       0       0       0       0       0       0
-  3882 ;;Total ram usage:        1 bytes
-  3883 ;; Hardware stack levels required when called:    3
-  3884 ;; This function calls:
-  3885 ;;		_I2C_Master_Read
-  3886 ;;		_I2C_Master_Start
-  3887 ;;		_I2C_Master_Stop
-  3888 ;;		_I2C_Master_Wait
-  3889 ;;		_I2C_Master_Write
-  3890 ;;		_init
-  3891 ;;		_master_init
-  3892 ;;		_slave_init
-  3893 ;; This function is called by:
-  3894 ;;		Startup code after reset
-  3895 ;; This function uses a non-reentrant model
-  3896 ;;
-  3897                           
-  3898                           
-  3899                           ;psect for function _main
-  3900  003E                     _main:
-  3901  003E                     l971:	
-  3902                           ;incstack = 0
-  3903                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-  3904                           
-  3905                           
-  3906                           ;main_mode.c: 14:     I2C_Master_Wait();
-  3907  003E  3180  20E7  3180   	fcall	_I2C_Master_Wait
-  3908                           
-  3909                           ;main_mode.c: 15:     init();
-  3910  0041  3180  20FE  3180   	fcall	_init
+  3857                           ; 1 bytes @ 0x4
+  3858  0074                     	ds	1
+  3859                           
+  3860                           	psect	maintext
+  3861  003F                     __pmaintext:	
+  3862 ;;
+  3863 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+  3864 ;;
+  3865 ;; *************** function _main *****************
+  3866 ;; Defined at:
+  3867 ;;		line 14 in file "main_mode.c"
+  3868 ;; Parameters:    Size  Location     Type
+  3869 ;;		None
+  3870 ;; Auto vars:     Size  Location     Type
+  3871 ;;		None
+  3872 ;; Return value:  Size  Location     Type
+  3873 ;;                  1    wreg      void 
+  3874 ;; Registers used:
+  3875 ;;		wreg, status,2, status,0, pclath, cstack
+  3876 ;; Tracked objects:
+  3877 ;;		On entry : B1F/0
+  3878 ;;		On exit  : 0/0
+  3879 ;;		Unchanged: 0/0
+  3880 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  3881 ;;      Params:         0       0       0       0       0       0       0       0
+  3882 ;;      Locals:         0       0       0       0       0       0       0       0
+  3883 ;;      Temps:          1       0       0       0       0       0       0       0
+  3884 ;;      Totals:         1       0       0       0       0       0       0       0
+  3885 ;;Total ram usage:        1 bytes
+  3886 ;; Hardware stack levels required when called:    3
+  3887 ;; This function calls:
+  3888 ;;		_I2C_Master_Read
+  3889 ;;		_I2C_Master_Start
+  3890 ;;		_I2C_Master_Stop
+  3891 ;;		_I2C_Master_Write
+  3892 ;;		_init
+  3893 ;;		_master_init
+  3894 ;;		_slave_init
+  3895 ;; This function is called by:
+  3896 ;;		Startup code after reset
+  3897 ;; This function uses a non-reentrant model
+  3898 ;;
+  3899                           
+  3900                           
+  3901                           ;psect for function _main
+  3902  003F                     _main:
+  3903  003F                     l977:	
+  3904                           ;incstack = 0
+  3905                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+  3906                           
+  3907                           
+  3908                           ;main_mode.c: 16:     init();
+  3909  003F  3181  2111  3180   	fcall	_init
+  3910  0042                     l979:
   3911                           
-  3912                           ;main_mode.c: 16:     master_init();
-  3913  0044  3180  20F3  3180   	fcall	_master_init
-  3914                           
-  3915                           ;main_mode.c: 19:     I2C_Master_Start();
-  3916  0047  3181  211F  3180   	fcall	_I2C_Master_Start
-  3917                           
-  3918                           ;main_mode.c: 20:     I2C_Master_Write((0x67 << 1)|0);
-  3919  004A  30CE               	movlw	206
-  3920  004B  3180  20D9  3180   	fcall	_I2C_Master_Write
+  3912                           ;main_mode.c: 17:     if(ever_be_master==0x00){
+  3913  0042  0875               	movf	_ever_be_master,w
+  3914  0043  1D03               	btfss	3,2
+  3915  0044  2846               	goto	u121
+  3916  0045  2847               	goto	u120
+  3917  0046                     u121:
+  3918  0046  287D               	goto	l989
+  3919  0047                     u120:
+  3920  0047                     l981:
   3921                           
-  3922                           ;main_mode.c: 21:     I2C_Master_Write(0xBC);
-  3923  004E  30BC               	movlw	188
-  3924  004F  3180  20D9  3180   	fcall	_I2C_Master_Write
-  3925                           
-  3926                           ;main_mode.c: 22:     I2C_Master_Stop();
-  3927  0052  3181  2119  3180   	fcall	_I2C_Master_Stop
-  3928                           
-  3929                           ;main_mode.c: 25:     I2C_Master_Start();
-  3930  0055  3181  211F  3180   	fcall	_I2C_Master_Start
+  3922                           ;main_mode.c: 18:         master_init();
+  3923  0047  3181  2106  3180   	fcall	_master_init
+  3924                           
+  3925                           ;main_mode.c: 21:         I2C_Master_Start();
+  3926  004A  3181  2132  3180   	fcall	_I2C_Master_Start
+  3927                           
+  3928                           ;main_mode.c: 22:         I2C_Master_Write((0x67 << 1)|0);
+  3929  004D  30CE               	movlw	206
+  3930  004E  3180  20EC  3180   	fcall	_I2C_Master_Write
   3931                           
-  3932                           ;main_mode.c: 26:     I2C_Master_Write((0x67 << 1)|1);
-  3933  0058  30CF               	movlw	207
-  3934  0059  3180  20D9  3180   	fcall	_I2C_Master_Write
+  3932                           ;main_mode.c: 23:         I2C_Master_Write(0xBC);
+  3933  0051  30BC               	movlw	188
+  3934  0052  3180  20EC  3180   	fcall	_I2C_Master_Write
   3935                           
-  3936                           ;main_mode.c: 27:     leader_feedback=I2C_Master_Read(0);
-  3937  005C  3000               	movlw	0
-  3938  005D  3180  20A5  3180   	fcall	_I2C_Master_Read
-  3939  0060  00F4               	movwf	??_main
-  3940  0061  0874               	movf	??_main,w
-  3941  0062  00F5               	movwf	_leader_feedback
-  3942                           
-  3943                           ;main_mode.c: 28:     I2C_Master_Stop();
-  3944  0063  3181  2119  3180   	fcall	_I2C_Master_Stop
-  3945  0066                     l973:
-  3946                           
-  3947                           ;main_mode.c: 31:     if(leader_feedback==0x5A){
-  3948  0066  305A               	movlw	90
-  3949  0067  0675               	xorwf	_leader_feedback,w
-  3950  0068  1D03               	btfss	3,2
-  3951  0069  286B               	goto	u121
-  3952  006A  286C               	goto	u120
-  3953  006B                     u121:
-  3954  006B  286F               	goto	l977
-  3955  006C                     u120:
-  3956  006C                     l975:
-  3957                           
-  3958                           ;main_mode.c: 32:         RA4=1;
-  3959  006C  0020               	movlb	0	; select bank0
-  3960  006D  160C               	bsf	12,4	;volatile
-  3961                           
-  3962                           ;main_mode.c: 33:         RA5=0;
-  3963  006E  128C               	bcf	12,5	;volatile
-  3964  006F                     l977:
-  3965                           
-  3966                           ;main_mode.c: 37:     slave_init(leader_feedback);
-  3967  006F  0875               	movf	_leader_feedback,w
-  3968  0070  3180  20C2  3180   	fcall	_slave_init
-  3969  0073                     l226:	
-  3970                           ;main_mode.c: 42:     while(1);
+  3936                           ;main_mode.c: 24:         I2C_Master_Stop();
+  3937  0055  3181  212C  3180   	fcall	_I2C_Master_Stop
+  3938                           
+  3939                           ;main_mode.c: 27:         I2C_Master_Start();
+  3940  0058  3181  2132  3180   	fcall	_I2C_Master_Start
+  3941                           
+  3942                           ;main_mode.c: 28:         I2C_Master_Write((0x67 << 1)|1);
+  3943  005B  30CF               	movlw	207
+  3944  005C  3180  20EC  3180   	fcall	_I2C_Master_Write
+  3945                           
+  3946                           ;main_mode.c: 29:         leader_feedback=I2C_Master_Read(0);
+  3947  005F  3000               	movlw	0
+  3948  0060  3180  20B8  3180   	fcall	_I2C_Master_Read
+  3949  0063  00F4               	movwf	??_main
+  3950  0064  0874               	movf	??_main,w
+  3951  0065  00F6               	movwf	_leader_feedback
+  3952                           
+  3953                           ;main_mode.c: 30:         I2C_Master_Stop();
+  3954  0066  3181  212C  3180   	fcall	_I2C_Master_Stop
+  3955  0069                     l983:
+  3956                           
+  3957                           ;main_mode.c: 33:         if(leader_feedback==0x5A){
+  3958  0069  305A               	movlw	90
+  3959  006A  0676               	xorwf	_leader_feedback,w
+  3960  006B  1D03               	btfss	3,2
+  3961  006C  286E               	goto	u131
+  3962  006D  286F               	goto	u130
+  3963  006E                     u131:
+  3964  006E  2873               	goto	l228
+  3965  006F                     u130:
+  3966  006F                     l985:
+  3967                           
+  3968                           ;main_mode.c: 34:             RA2=1;
+  3969  006F  0020               	movlb	0	; select bank0
+  3970  0070  150C               	bsf	12,2	;volatile
   3971                           
-  3972  0073                     l227:
-  3973  0073  2873               	goto	l226
-  3974  0074  3180  2835         	ljmp	start
-  3975  0076                     __end_of_main:
-  3976                           
-  3977                           	psect	text1
-  3978  00C2                     __ptext1:	
-  3979 ;; *************** function _slave_init *****************
-  3980 ;; Defined at:
-  3981 ;;		line 4 in file "slave/init_slave.c"
-  3982 ;; Parameters:    Size  Location     Type
-  3983 ;;  address         1    wreg     unsigned char 
-  3984 ;; Auto vars:     Size  Location     Type
-  3985 ;;  address         1    1[COMMON] unsigned char 
-  3986 ;; Return value:  Size  Location     Type
-  3987 ;;                  1    wreg      void 
-  3988 ;; Registers used:
-  3989 ;;		wreg, status,2, status,0
-  3990 ;; Tracked objects:
-  3991 ;;		On entry : 0/0
-  3992 ;;		On exit  : 0/0
-  3993 ;;		Unchanged: 0/0
-  3994 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  3995 ;;      Params:         0       0       0       0       0       0       0       0
-  3996 ;;      Locals:         1       0       0       0       0       0       0       0
-  3997 ;;      Temps:          0       0       0       0       0       0       0       0
-  3998 ;;      Totals:         1       0       0       0       0       0       0       0
-  3999 ;;Total ram usage:        1 bytes
-  4000 ;; Hardware stack levels used:    1
-  4001 ;; Hardware stack levels required when called:    1
-  4002 ;; This function calls:
-  4003 ;;		Nothing
-  4004 ;; This function is called by:
-  4005 ;;		_main
-  4006 ;; This function uses a non-reentrant model
-  4007 ;;
-  4008                           
-  4009                           
-  4010                           ;psect for function _slave_init
-  4011  00C2                     _slave_init:
-  4012                           
-  4013                           ;incstack = 0
-  4014                           ; Regs used in _slave_init: [wreg+status,2+status,0]
-  4015                           ;slave_init@address stored from wreg
-  4016  00C2  00F1               	movwf	slave_init@address
-  4017  00C3                     l877:
-  4018                           
-  4019                           ;slave/init_slave.c: 5:     SSP1STAT = 0xC0;
-  4020  00C3  30C0               	movlw	192
-  4021  00C4  0023               	movlb	3	; select bank3
-  4022  00C5  008F               	movwf	15	;volatile
-  4023  00C6                     l879:
-  4024                           
-  4025                           ;slave/init_slave.c: 6:     SSP1ADD = (uint8_t)(address<<1);
-  4026  00C6  3571               	lslf	slave_init@address,w
-  4027  00C7  008D               	movwf	13	;volatile
-  4028  00C8                     l881:
-  4029                           
-  4030                           ;slave/init_slave.c: 7:     SSP1MSK = 0xFF;
-  4031  00C8  30FF               	movlw	255
-  4032  00C9  008E               	movwf	14	;volatile
-  4033  00CA                     l883:
-  4034                           
-  4035                           ;slave/init_slave.c: 8:     SSP1CON1 = 0x26;
-  4036  00CA  3026               	movlw	38
-  4037  00CB  0090               	movwf	16	;volatile
-  4038  00CC                     l885:
-  4039                           
-  4040                           ;slave/init_slave.c: 9:     SSP1CON2 = 0x01;
-  4041  00CC  3001               	movlw	1
-  4042  00CD  0091               	movwf	17	;volatile
-  4043  00CE                     l887:
-  4044                           
-  4045                           ;slave/init_slave.c: 10:     SSP1CON3 = 0x00;
-  4046  00CE  0192               	clrf	18	;volatile
-  4047  00CF                     l889:
-  4048                           
-  4049                           ;slave/init_slave.c: 11:     SSP1CON3bits.BOEN=1;
-  4050  00CF  1612               	bsf	18,4	;volatile
-  4051  00D0                     l891:
-  4052                           
-  4053                           ;slave/init_slave.c: 12:     SSP1BUF = 0x00;
-  4054  00D0  018C               	clrf	12	;volatile
-  4055  00D1                     l893:
-  4056                           
-  4057                           ;slave/init_slave.c: 13:     GIE = 1;
-  4058  00D1  178B               	bsf	11,7	;volatile
-  4059  00D2                     l895:
-  4060                           
-  4061                           ;slave/init_slave.c: 14:     PEIE = 1;
-  4062  00D2  170B               	bsf	11,6	;volatile
-  4063  00D3                     l897:
-  4064                           
-  4065                           ;slave/init_slave.c: 15:     PIR3bits.SSP1IF = 0;
-  4066  00D3  002E               	movlb	14	; select bank14
-  4067  00D4  100F               	bcf	15,0	;volatile
-  4068  00D5                     l899:
-  4069                           
-  4070                           ;slave/init_slave.c: 16:     PIR3bits.BCL1IF = 0;
-  4071  00D5  108F               	bcf	15,1	;volatile
-  4072  00D6                     l901:
-  4073                           
-  4074                           ;slave/init_slave.c: 17:     PIE3bits.SSP1IE = 1;
-  4075  00D6  1419               	bsf	25,0	;volatile
-  4076  00D7                     l903:
-  4077                           
-  4078                           ;slave/init_slave.c: 18:     PIE3bits.BCL1IE = 1;
-  4079  00D7  1499               	bsf	25,1	;volatile
-  4080  00D8                     l147:
-  4081  00D8  0008               	return
-  4082  00D9                     __end_of_slave_init:
-  4083                           
-  4084                           	psect	text2
-  4085  00F3                     __ptext2:	
-  4086 ;; *************** function _master_init *****************
-  4087 ;; Defined at:
-  4088 ;;		line 4 in file "master/init_master.c"
-  4089 ;; Parameters:    Size  Location     Type
-  4090 ;;		None
-  4091 ;; Auto vars:     Size  Location     Type
-  4092 ;;		None
-  4093 ;; Return value:  Size  Location     Type
-  4094 ;;                  1    wreg      void 
-  4095 ;; Registers used:
-  4096 ;;		wreg, status,2
-  4097 ;; Tracked objects:
-  4098 ;;		On entry : 0/0
-  4099 ;;		On exit  : 0/0
-  4100 ;;		Unchanged: 0/0
-  4101 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4102 ;;      Params:         0       0       0       0       0       0       0       0
-  4103 ;;      Locals:         0       0       0       0       0       0       0       0
-  4104 ;;      Temps:          0       0       0       0       0       0       0       0
-  4105 ;;      Totals:         0       0       0       0       0       0       0       0
-  4106 ;;Total ram usage:        0 bytes
-  4107 ;; Hardware stack levels used:    1
-  4108 ;; Hardware stack levels required when called:    1
-  4109 ;; This function calls:
-  4110 ;;		Nothing
-  4111 ;; This function is called by:
-  4112 ;;		_main
-  4113 ;; This function uses a non-reentrant model
-  4114 ;;
-  4115                           
-  4116                           
-  4117                           ;psect for function _master_init
-  4118  00F3                     _master_init:
-  4119  00F3                     l905:	
-  4120                           ;incstack = 0
-  4121                           ; Regs used in _master_init: [wreg+status,2]
-  4122                           
-  4123                           
-  4124                           ;master/init_master.c: 5:     SSP1CON1=0b00101000;
-  4125  00F3  3028               	movlw	40
-  4126  00F4  0023               	movlb	3	; select bank3
-  4127  00F5  0090               	movwf	16	;volatile
-  4128  00F6                     l907:
-  4129                           
-  4130                           ;master/init_master.c: 6:     SSP1CON2=0x00;
-  4131  00F6  0191               	clrf	17	;volatile
-  4132  00F7                     l909:
-  4133                           
-  4134                           ;master/init_master.c: 7:     SSP1STATbits.SMP=1;
-  4135  00F7  178F               	bsf	15,7	;volatile
-  4136  00F8                     l911:
-  4137                           
-  4138                           ;master/init_master.c: 8:     SSP1STATbits.CKE=1;
-  4139  00F8  170F               	bsf	15,6	;volatile
-  4140  00F9                     l913:
-  4141                           
-  4142                           ;master/init_master.c: 9:     SSP1ADD=0x06;
-  4143  00F9  3006               	movlw	6
-  4144  00FA  008D               	movwf	13	;volatile
-  4145  00FB                     l915:
-  4146                           
-  4147                           ;master/init_master.c: 10:     SSP1MSK=0xFF;
-  4148  00FB  30FF               	movlw	255
-  4149  00FC  008E               	movwf	14	;volatile
-  4150  00FD                     l160:
-  4151  00FD  0008               	return
-  4152  00FE                     __end_of_master_init:
-  4153                           
-  4154                           	psect	text3
-  4155  00FE                     __ptext3:	
-  4156 ;; *************** function _init *****************
-  4157 ;; Defined at:
-  4158 ;;		line 4 in file "initialize.c"
-  4159 ;; Parameters:    Size  Location     Type
-  4160 ;;		None
-  4161 ;; Auto vars:     Size  Location     Type
-  4162 ;;		None
-  4163 ;; Return value:  Size  Location     Type
-  4164 ;;                  1    wreg      void 
-  4165 ;; Registers used:
-  4166 ;;		wreg, status,2, status,0, pclath, cstack
-  4167 ;; Tracked objects:
-  4168 ;;		On entry : 0/0
-  4169 ;;		On exit  : 0/0
-  4170 ;;		Unchanged: 0/0
-  4171 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4172 ;;      Params:         0       0       0       0       0       0       0       0
-  4173 ;;      Locals:         0       0       0       0       0       0       0       0
-  4174 ;;      Temps:          0       0       0       0       0       0       0       0
-  4175 ;;      Totals:         0       0       0       0       0       0       0       0
-  4176 ;;Total ram usage:        0 bytes
-  4177 ;; Hardware stack levels used:    1
-  4178 ;; Hardware stack levels required when called:    2
-  4179 ;; This function calls:
-  4180 ;;		_OSCILLATOR_Initialize
-  4181 ;;		_PIN_MANAGER_Initialize
-  4182 ;;		_PMD_Initialize
-  4183 ;; This function is called by:
-  4184 ;;		_main
-  4185 ;; This function uses a non-reentrant model
-  4186 ;;
+  3972                           ;main_mode.c: 35:             ever_be_master=0x01;
+  3973  0071  01F5               	clrf	_ever_be_master
+  3974  0072  0AF5               	incf	_ever_be_master,f
+  3975  0073                     l228:	
+  3976                           ;main_mode.c: 36:         }
+  3977                           
+  3978                           
+  3979                           ;main_mode.c: 38:         if(SSP1STATbits.S==1) RA4=1;
+  3980  0073  0023               	movlb	3	; select bank3
+  3981  0074  1D8F               	btfss	15,3	;volatile
+  3982  0075  2877               	goto	u141
+  3983  0076  2878               	goto	u140
+  3984  0077                     u141:
+  3985  0077  287A               	goto	l229
+  3986  0078                     u140:
+  3987  0078                     l987:
+  3988  0078  0020               	movlb	0	; select bank0
+  3989  0079  160C               	bsf	12,4	;volatile
+  3990  007A                     l229:
+  3991                           
+  3992                           ;main_mode.c: 39:         RA4=0;
+  3993  007A  0020               	movlb	0	; select bank0
+  3994  007B  120C               	bcf	12,4	;volatile
+  3995                           
+  3996                           ;main_mode.c: 40:     }
+  3997  007C  2886               	goto	l232
+  3998  007D                     l989:
+  3999  007D  0375               	decf	_ever_be_master,w
+  4000  007E  1D03               	btfss	3,2
+  4001  007F  2881               	goto	u151
+  4002  0080  2882               	goto	u150
+  4003  0081                     u151:
+  4004  0081  2886               	goto	l232
+  4005  0082                     u150:
+  4006  0082                     l991:
+  4007                           
+  4008                           ;main_mode.c: 43:         slave_init(leader_feedback);
+  4009  0082  0876               	movf	_leader_feedback,w
+  4010  0083  3180  20D5  3180   	fcall	_slave_init
+  4011  0086                     l232:	
+  4012                           ;main_mode.c: 49:     while(1);
+  4013                           
+  4014  0086  2886               	goto	l232
+  4015  0087  3180  2835         	ljmp	start
+  4016  0089                     __end_of_main:
+  4017                           
+  4018                           	psect	text1
+  4019  00D5                     __ptext1:	
+  4020 ;; *************** function _slave_init *****************
+  4021 ;; Defined at:
+  4022 ;;		line 4 in file "slave/init_slave.c"
+  4023 ;; Parameters:    Size  Location     Type
+  4024 ;;  address         1    wreg     unsigned char 
+  4025 ;; Auto vars:     Size  Location     Type
+  4026 ;;  address         1    1[COMMON] unsigned char 
+  4027 ;; Return value:  Size  Location     Type
+  4028 ;;                  1    wreg      void 
+  4029 ;; Registers used:
+  4030 ;;		wreg, status,2, status,0
+  4031 ;; Tracked objects:
+  4032 ;;		On entry : 0/0
+  4033 ;;		On exit  : 0/0
+  4034 ;;		Unchanged: 0/0
+  4035 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4036 ;;      Params:         0       0       0       0       0       0       0       0
+  4037 ;;      Locals:         1       0       0       0       0       0       0       0
+  4038 ;;      Temps:          0       0       0       0       0       0       0       0
+  4039 ;;      Totals:         1       0       0       0       0       0       0       0
+  4040 ;;Total ram usage:        1 bytes
+  4041 ;; Hardware stack levels used:    1
+  4042 ;; Hardware stack levels required when called:    1
+  4043 ;; This function calls:
+  4044 ;;		Nothing
+  4045 ;; This function is called by:
+  4046 ;;		_main
+  4047 ;; This function uses a non-reentrant model
+  4048 ;;
+  4049                           
+  4050                           
+  4051                           ;psect for function _slave_init
+  4052  00D5                     _slave_init:
+  4053                           
+  4054                           ;incstack = 0
+  4055                           ; Regs used in _slave_init: [wreg+status,2+status,0]
+  4056                           ;slave_init@address stored from wreg
+  4057  00D5  00F1               	movwf	slave_init@address
+  4058  00D6                     l883:
+  4059                           
+  4060                           ;slave/init_slave.c: 5:     SSP1STAT = 0xC0;
+  4061  00D6  30C0               	movlw	192
+  4062  00D7  0023               	movlb	3	; select bank3
+  4063  00D8  008F               	movwf	15	;volatile
+  4064  00D9                     l885:
+  4065                           
+  4066                           ;slave/init_slave.c: 6:     SSP1ADD = (uint8_t)(address<<1);
+  4067  00D9  3571               	lslf	slave_init@address,w
+  4068  00DA  008D               	movwf	13	;volatile
+  4069  00DB                     l887:
+  4070                           
+  4071                           ;slave/init_slave.c: 7:     SSP1MSK = 0xFF;
+  4072  00DB  30FF               	movlw	255
+  4073  00DC  008E               	movwf	14	;volatile
+  4074  00DD                     l889:
+  4075                           
+  4076                           ;slave/init_slave.c: 8:     SSP1CON1 = 0x26;
+  4077  00DD  3026               	movlw	38
+  4078  00DE  0090               	movwf	16	;volatile
+  4079  00DF                     l891:
+  4080                           
+  4081                           ;slave/init_slave.c: 9:     SSP1CON2 = 0x01;
+  4082  00DF  3001               	movlw	1
+  4083  00E0  0091               	movwf	17	;volatile
+  4084  00E1                     l893:
+  4085                           
+  4086                           ;slave/init_slave.c: 10:     SSP1CON3 = 0x00;
+  4087  00E1  0192               	clrf	18	;volatile
+  4088  00E2                     l895:
+  4089                           
+  4090                           ;slave/init_slave.c: 11:     SSP1CON3bits.BOEN=1;
+  4091  00E2  1612               	bsf	18,4	;volatile
+  4092  00E3                     l897:
+  4093                           
+  4094                           ;slave/init_slave.c: 12:     SSP1BUF = 0x00;
+  4095  00E3  018C               	clrf	12	;volatile
+  4096  00E4                     l899:
+  4097                           
+  4098                           ;slave/init_slave.c: 13:     GIE = 1;
+  4099  00E4  178B               	bsf	11,7	;volatile
+  4100  00E5                     l901:
+  4101                           
+  4102                           ;slave/init_slave.c: 14:     PEIE = 1;
+  4103  00E5  170B               	bsf	11,6	;volatile
+  4104  00E6                     l903:
+  4105                           
+  4106                           ;slave/init_slave.c: 15:     PIR3bits.SSP1IF = 0;
+  4107  00E6  002E               	movlb	14	; select bank14
+  4108  00E7  100F               	bcf	15,0	;volatile
+  4109  00E8                     l905:
+  4110                           
+  4111                           ;slave/init_slave.c: 16:     PIR3bits.BCL1IF = 0;
+  4112  00E8  108F               	bcf	15,1	;volatile
+  4113  00E9                     l907:
+  4114                           
+  4115                           ;slave/init_slave.c: 17:     PIE3bits.SSP1IE = 1;
+  4116  00E9  1419               	bsf	25,0	;volatile
+  4117  00EA                     l909:
+  4118                           
+  4119                           ;slave/init_slave.c: 18:     PIE3bits.BCL1IE = 1;
+  4120  00EA  1499               	bsf	25,1	;volatile
+  4121  00EB                     l147:
+  4122  00EB  0008               	return
+  4123  00EC                     __end_of_slave_init:
+  4124                           
+  4125                           	psect	text2
+  4126  0106                     __ptext2:	
+  4127 ;; *************** function _master_init *****************
+  4128 ;; Defined at:
+  4129 ;;		line 4 in file "master/init_master.c"
+  4130 ;; Parameters:    Size  Location     Type
+  4131 ;;		None
+  4132 ;; Auto vars:     Size  Location     Type
+  4133 ;;		None
+  4134 ;; Return value:  Size  Location     Type
+  4135 ;;                  1    wreg      void 
+  4136 ;; Registers used:
+  4137 ;;		wreg, status,2
+  4138 ;; Tracked objects:
+  4139 ;;		On entry : 0/0
+  4140 ;;		On exit  : 0/0
+  4141 ;;		Unchanged: 0/0
+  4142 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4143 ;;      Params:         0       0       0       0       0       0       0       0
+  4144 ;;      Locals:         0       0       0       0       0       0       0       0
+  4145 ;;      Temps:          0       0       0       0       0       0       0       0
+  4146 ;;      Totals:         0       0       0       0       0       0       0       0
+  4147 ;;Total ram usage:        0 bytes
+  4148 ;; Hardware stack levels used:    1
+  4149 ;; Hardware stack levels required when called:    1
+  4150 ;; This function calls:
+  4151 ;;		Nothing
+  4152 ;; This function is called by:
+  4153 ;;		_main
+  4154 ;; This function uses a non-reentrant model
+  4155 ;;
+  4156                           
+  4157                           
+  4158                           ;psect for function _master_init
+  4159  0106                     _master_init:
+  4160  0106                     l911:	
+  4161                           ;incstack = 0
+  4162                           ; Regs used in _master_init: [wreg+status,2]
+  4163                           
+  4164                           
+  4165                           ;master/init_master.c: 5:     SSP1CON1=0b00101000;
+  4166  0106  3028               	movlw	40
+  4167  0107  0023               	movlb	3	; select bank3
+  4168  0108  0090               	movwf	16	;volatile
+  4169  0109                     l913:
+  4170                           
+  4171                           ;master/init_master.c: 6:     SSP1CON2=0x00;
+  4172  0109  0191               	clrf	17	;volatile
+  4173  010A                     l915:
+  4174                           
+  4175                           ;master/init_master.c: 7:     SSP1STATbits.SMP=1;
+  4176  010A  178F               	bsf	15,7	;volatile
+  4177  010B                     l917:
+  4178                           
+  4179                           ;master/init_master.c: 8:     SSP1STATbits.CKE=1;
+  4180  010B  170F               	bsf	15,6	;volatile
+  4181  010C                     l919:
+  4182                           
+  4183                           ;master/init_master.c: 9:     SSP1ADD=0x06;
+  4184  010C  3006               	movlw	6
+  4185  010D  008D               	movwf	13	;volatile
+  4186  010E                     l921:
   4187                           
-  4188                           
-  4189                           ;psect for function _init
-  4190  00FE                     _init:
-  4191  00FE                     l871:	
-  4192                           ;incstack = 0
-  4193                           ; Regs used in _init: [wreg+status,2+status,0+pclath+cstack]
+  4188                           ;master/init_master.c: 10:     SSP1MSK=0xFF;
+  4189  010E  30FF               	movlw	255
+  4190  010F  008E               	movwf	14	;volatile
+  4191  0110                     l160:
+  4192  0110  0008               	return
+  4193  0111                     __end_of_master_init:
   4194                           
-  4195                           
-  4196                           ;initialize.c: 6:     PMD_Initialize();
-  4197  00FE  3181  2111  3180   	fcall	_PMD_Initialize
-  4198  0101                     l873:
-  4199                           
-  4200                           ;initialize.c: 7:     PIN_MANAGER_Initialize();
-  4201  0101  3180  2076  3180   	fcall	_PIN_MANAGER_Initialize
-  4202  0104                     l875:
-  4203                           
-  4204                           ;initialize.c: 8:     OSCILLATOR_Initialize();
-  4205  0104  3181  2108  3180   	fcall	_OSCILLATOR_Initialize
-  4206  0107                     l85:
-  4207  0107  0008               	return
-  4208  0108                     __end_of_init:
-  4209                           
-  4210                           	psect	text4
-  4211  0111                     __ptext4:	
-  4212 ;; *************** function _PMD_Initialize *****************
-  4213 ;; Defined at:
-  4214 ;;		line 25 in file "initialize.c"
-  4215 ;; Parameters:    Size  Location     Type
-  4216 ;;		None
-  4217 ;; Auto vars:     Size  Location     Type
-  4218 ;;		None
-  4219 ;; Return value:  Size  Location     Type
-  4220 ;;                  1    wreg      void 
-  4221 ;; Registers used:
-  4222 ;;		status,2
-  4223 ;; Tracked objects:
-  4224 ;;		On entry : 0/0
-  4225 ;;		On exit  : 0/0
-  4226 ;;		Unchanged: 0/0
-  4227 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4228 ;;      Params:         0       0       0       0       0       0       0       0
-  4229 ;;      Locals:         0       0       0       0       0       0       0       0
-  4230 ;;      Temps:          0       0       0       0       0       0       0       0
-  4231 ;;      Totals:         0       0       0       0       0       0       0       0
-  4232 ;;Total ram usage:        0 bytes
-  4233 ;; Hardware stack levels used:    1
-  4234 ;; Hardware stack levels required when called:    1
-  4235 ;; This function calls:
-  4236 ;;		Nothing
-  4237 ;; This function is called by:
-  4238 ;;		_init
-  4239 ;; This function uses a non-reentrant model
-  4240 ;;
-  4241                           
-  4242                           
-  4243                           ;psect for function _PMD_Initialize
-  4244  0111                     _PMD_Initialize:
-  4245  0111                     l839:	
-  4246                           ;incstack = 0
-  4247                           ; Regs used in _PMD_Initialize: [status,2]
-  4248                           
-  4249                           
-  4250                           ;initialize.c: 28:     PMD0 = 0x00;
-  4251  0111  002F               	movlb	15	; select bank15
-  4252  0112  0196               	clrf	22	;volatile
-  4253                           
-  4254                           ;initialize.c: 30:     PMD1 = 0x00;
-  4255  0113  0197               	clrf	23	;volatile
-  4256                           
-  4257                           ;initialize.c: 32:     PMD2 = 0x00;
-  4258  0114  0198               	clrf	24	;volatile
-  4259                           
-  4260                           ;initialize.c: 34:     PMD3 = 0x00;
-  4261  0115  0199               	clrf	25	;volatile
-  4262                           
-  4263                           ;initialize.c: 36:     PMD4 = 0x00;
-  4264  0116  019A               	clrf	26	;volatile
-  4265                           
-  4266                           ;initialize.c: 38:     PMD5 = 0x00;
-  4267  0117  019B               	clrf	27	;volatile
-  4268  0118                     l91:
-  4269  0118  0008               	return
-  4270  0119                     __end_of_PMD_Initialize:
-  4271                           
-  4272                           	psect	text5
-  4273  0076                     __ptext5:	
-  4274 ;; *************** function _PIN_MANAGER_Initialize *****************
-  4275 ;; Defined at:
-  4276 ;;		line 41 in file "initialize.c"
-  4277 ;; Parameters:    Size  Location     Type
-  4278 ;;		None
-  4279 ;; Auto vars:     Size  Location     Type
-  4280 ;;		None
-  4281 ;; Return value:  Size  Location     Type
-  4282 ;;                  1    wreg      void 
-  4283 ;; Registers used:
-  4284 ;;		wreg, status,2
-  4285 ;; Tracked objects:
-  4286 ;;		On entry : 0/0
-  4287 ;;		On exit  : 0/0
-  4288 ;;		Unchanged: 0/0
-  4289 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4290 ;;      Params:         0       0       0       0       0       0       0       0
-  4291 ;;      Locals:         0       0       0       0       0       0       0       0
-  4292 ;;      Temps:          0       0       0       0       0       0       0       0
-  4293 ;;      Totals:         0       0       0       0       0       0       0       0
-  4294 ;;Total ram usage:        0 bytes
-  4295 ;; Hardware stack levels used:    1
-  4296 ;; Hardware stack levels required when called:    1
-  4297 ;; This function calls:
-  4298 ;;		Nothing
-  4299 ;; This function is called by:
-  4300 ;;		_init
-  4301 ;; This function uses a non-reentrant model
-  4302 ;;
+  4195                           	psect	text3
+  4196  0111                     __ptext3:	
+  4197 ;; *************** function _init *****************
+  4198 ;; Defined at:
+  4199 ;;		line 4 in file "initialize.c"
+  4200 ;; Parameters:    Size  Location     Type
+  4201 ;;		None
+  4202 ;; Auto vars:     Size  Location     Type
+  4203 ;;		None
+  4204 ;; Return value:  Size  Location     Type
+  4205 ;;                  1    wreg      void 
+  4206 ;; Registers used:
+  4207 ;;		wreg, status,2, status,0, pclath, cstack
+  4208 ;; Tracked objects:
+  4209 ;;		On entry : 0/0
+  4210 ;;		On exit  : 0/0
+  4211 ;;		Unchanged: 0/0
+  4212 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4213 ;;      Params:         0       0       0       0       0       0       0       0
+  4214 ;;      Locals:         0       0       0       0       0       0       0       0
+  4215 ;;      Temps:          0       0       0       0       0       0       0       0
+  4216 ;;      Totals:         0       0       0       0       0       0       0       0
+  4217 ;;Total ram usage:        0 bytes
+  4218 ;; Hardware stack levels used:    1
+  4219 ;; Hardware stack levels required when called:    2
+  4220 ;; This function calls:
+  4221 ;;		_OSCILLATOR_Initialize
+  4222 ;;		_PIN_MANAGER_Initialize
+  4223 ;;		_PMD_Initialize
+  4224 ;; This function is called by:
+  4225 ;;		_main
+  4226 ;; This function uses a non-reentrant model
+  4227 ;;
+  4228                           
+  4229                           
+  4230                           ;psect for function _init
+  4231  0111                     _init:
+  4232  0111                     l877:	
+  4233                           ;incstack = 0
+  4234                           ; Regs used in _init: [wreg+status,2+status,0+pclath+cstack]
+  4235                           
+  4236                           
+  4237                           ;initialize.c: 6:     PMD_Initialize();
+  4238  0111  3181  2124  3181   	fcall	_PMD_Initialize
+  4239  0114                     l879:
+  4240                           
+  4241                           ;initialize.c: 7:     PIN_MANAGER_Initialize();
+  4242  0114  3180  2089  3181   	fcall	_PIN_MANAGER_Initialize
+  4243  0117                     l881:
+  4244                           
+  4245                           ;initialize.c: 8:     OSCILLATOR_Initialize();
+  4246  0117  3181  211B  3181   	fcall	_OSCILLATOR_Initialize
+  4247  011A                     l85:
+  4248  011A  0008               	return
+  4249  011B                     __end_of_init:
+  4250                           
+  4251                           	psect	text4
+  4252  0124                     __ptext4:	
+  4253 ;; *************** function _PMD_Initialize *****************
+  4254 ;; Defined at:
+  4255 ;;		line 25 in file "initialize.c"
+  4256 ;; Parameters:    Size  Location     Type
+  4257 ;;		None
+  4258 ;; Auto vars:     Size  Location     Type
+  4259 ;;		None
+  4260 ;; Return value:  Size  Location     Type
+  4261 ;;                  1    wreg      void 
+  4262 ;; Registers used:
+  4263 ;;		status,2
+  4264 ;; Tracked objects:
+  4265 ;;		On entry : 0/0
+  4266 ;;		On exit  : 0/0
+  4267 ;;		Unchanged: 0/0
+  4268 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4269 ;;      Params:         0       0       0       0       0       0       0       0
+  4270 ;;      Locals:         0       0       0       0       0       0       0       0
+  4271 ;;      Temps:          0       0       0       0       0       0       0       0
+  4272 ;;      Totals:         0       0       0       0       0       0       0       0
+  4273 ;;Total ram usage:        0 bytes
+  4274 ;; Hardware stack levels used:    1
+  4275 ;; Hardware stack levels required when called:    1
+  4276 ;; This function calls:
+  4277 ;;		Nothing
+  4278 ;; This function is called by:
+  4279 ;;		_init
+  4280 ;; This function uses a non-reentrant model
+  4281 ;;
+  4282                           
+  4283                           
+  4284                           ;psect for function _PMD_Initialize
+  4285  0124                     _PMD_Initialize:
+  4286  0124                     l845:	
+  4287                           ;incstack = 0
+  4288                           ; Regs used in _PMD_Initialize: [status,2]
+  4289                           
+  4290                           
+  4291                           ;initialize.c: 28:     PMD0 = 0x00;
+  4292  0124  002F               	movlb	15	; select bank15
+  4293  0125  0196               	clrf	22	;volatile
+  4294                           
+  4295                           ;initialize.c: 30:     PMD1 = 0x00;
+  4296  0126  0197               	clrf	23	;volatile
+  4297                           
+  4298                           ;initialize.c: 32:     PMD2 = 0x00;
+  4299  0127  0198               	clrf	24	;volatile
+  4300                           
+  4301                           ;initialize.c: 34:     PMD3 = 0x00;
+  4302  0128  0199               	clrf	25	;volatile
   4303                           
-  4304                           
-  4305                           ;psect for function _PIN_MANAGER_Initialize
-  4306  0076                     _PIN_MANAGER_Initialize:
-  4307  0076                     l841:	
-  4308                           ;incstack = 0
-  4309                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2]
-  4310                           
-  4311                           
-  4312                           ;initialize.c: 46:     LATA = 0x00;
-  4313  0076  0020               	movlb	0	; select bank0
-  4314  0077  0196               	clrf	22	;volatile
-  4315                           
-  4316                           ;initialize.c: 47:     LATB = 0x00;
-  4317  0078  0197               	clrf	23	;volatile
-  4318                           
-  4319                           ;initialize.c: 48:     LATC = 0x00;
-  4320  0079  0198               	clrf	24	;volatile
-  4321                           
-  4322                           ;initialize.c: 53:     TRISA = 0x00;
-  4323  007A  0191               	clrf	17	;volatile
-  4324  007B                     l843:
-  4325                           
-  4326                           ;initialize.c: 54:     TRISB = 0xFF;
-  4327  007B  30FF               	movlw	255
-  4328  007C  0092               	movwf	18	;volatile
-  4329  007D                     l845:
-  4330                           
-  4331                           ;initialize.c: 55:     TRISC = 0xFF;
-  4332  007D  30FF               	movlw	255
-  4333  007E  0093               	movwf	19	;volatile
-  4334  007F                     l847:
-  4335                           
-  4336                           ;initialize.c: 60:     ANSELC = 0xE7;
-  4337  007F  30E7               	movlw	231
-  4338  0080  003E               	movlb	30	; select bank30
-  4339  0081  00CE               	movwf	78	;volatile
-  4340  0082                     l849:
-  4341                           
-  4342                           ;initialize.c: 61:     ANSELB = 0xFF;
-  4343  0082  30FF               	movlw	255
-  4344  0083  00C3               	movwf	67	;volatile
+  4304                           ;initialize.c: 36:     PMD4 = 0x00;
+  4305  0129  019A               	clrf	26	;volatile
+  4306                           
+  4307                           ;initialize.c: 38:     PMD5 = 0x00;
+  4308  012A  019B               	clrf	27	;volatile
+  4309  012B                     l91:
+  4310  012B  0008               	return
+  4311  012C                     __end_of_PMD_Initialize:
+  4312                           
+  4313                           	psect	text5
+  4314  0089                     __ptext5:	
+  4315 ;; *************** function _PIN_MANAGER_Initialize *****************
+  4316 ;; Defined at:
+  4317 ;;		line 41 in file "initialize.c"
+  4318 ;; Parameters:    Size  Location     Type
+  4319 ;;		None
+  4320 ;; Auto vars:     Size  Location     Type
+  4321 ;;		None
+  4322 ;; Return value:  Size  Location     Type
+  4323 ;;                  1    wreg      void 
+  4324 ;; Registers used:
+  4325 ;;		wreg, status,2
+  4326 ;; Tracked objects:
+  4327 ;;		On entry : 0/0
+  4328 ;;		On exit  : 0/0
+  4329 ;;		Unchanged: 0/0
+  4330 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4331 ;;      Params:         0       0       0       0       0       0       0       0
+  4332 ;;      Locals:         0       0       0       0       0       0       0       0
+  4333 ;;      Temps:          0       0       0       0       0       0       0       0
+  4334 ;;      Totals:         0       0       0       0       0       0       0       0
+  4335 ;;Total ram usage:        0 bytes
+  4336 ;; Hardware stack levels used:    1
+  4337 ;; Hardware stack levels required when called:    1
+  4338 ;; This function calls:
+  4339 ;;		Nothing
+  4340 ;; This function is called by:
+  4341 ;;		_init
+  4342 ;; This function uses a non-reentrant model
+  4343 ;;
+  4344                           
   4345                           
-  4346                           ;initialize.c: 62:     ANSELA = 0x00;
-  4347  0084  01B8               	clrf	56	;volatile
-  4348                           
-  4349                           ;initialize.c: 67:     WPUE = 0x00;
-  4350  0085  01E5               	clrf	101	;volatile
+  4346                           ;psect for function _PIN_MANAGER_Initialize
+  4347  0089                     _PIN_MANAGER_Initialize:
+  4348  0089                     l847:	
+  4349                           ;incstack = 0
+  4350                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2]
   4351                           
-  4352                           ;initialize.c: 68:     WPUB = 0x00;
-  4353  0086  01C4               	clrf	68	;volatile
-  4354                           
-  4355                           ;initialize.c: 69:     WPUA = 0x00;
-  4356  0087  01B9               	clrf	57	;volatile
-  4357                           
-  4358                           ;initialize.c: 70:     WPUC = 0x00;
-  4359  0088  01CF               	clrf	79	;volatile
-  4360                           
-  4361                           ;initialize.c: 75:     ODCONA = 0x00;
-  4362  0089  01BA               	clrf	58	;volatile
-  4363                           
-  4364                           ;initialize.c: 76:     ODCONB = 0x00;
-  4365  008A  01C5               	clrf	69	;volatile
+  4352                           
+  4353                           ;initialize.c: 46:     LATA = 0x00;
+  4354  0089  0020               	movlb	0	; select bank0
+  4355  008A  0196               	clrf	22	;volatile
+  4356                           
+  4357                           ;initialize.c: 47:     LATB = 0x00;
+  4358  008B  0197               	clrf	23	;volatile
+  4359                           
+  4360                           ;initialize.c: 48:     LATC = 0x00;
+  4361  008C  0198               	clrf	24	;volatile
+  4362                           
+  4363                           ;initialize.c: 53:     TRISA = 0x00;
+  4364  008D  0191               	clrf	17	;volatile
+  4365  008E                     l849:
   4366                           
-  4367                           ;initialize.c: 77:     ODCONC = 0x00;
-  4368  008B  01D0               	clrf	80	;volatile
-  4369  008C                     l851:
-  4370                           
-  4371                           ;initialize.c: 82:     SLRCONA = 0xFF;
-  4372  008C  30FF               	movlw	255
-  4373  008D  00BB               	movwf	59	;volatile
-  4374  008E                     l853:
-  4375                           
-  4376                           ;initialize.c: 83:     SLRCONB = 0xFF;
-  4377  008E  30FF               	movlw	255
-  4378  008F  00C6               	movwf	70	;volatile
-  4379  0090                     l855:
-  4380                           
-  4381                           ;initialize.c: 84:     SLRCONC = 0xFF;
-  4382  0090  30FF               	movlw	255
-  4383  0091  00D1               	movwf	81	;volatile
-  4384  0092                     l857:
-  4385                           
-  4386                           ;initialize.c: 89:     INLVLA = 0x00;
-  4387  0092  01BC               	clrf	60	;volatile
-  4388                           
-  4389                           ;initialize.c: 90:     INLVLB = 0xFF;
-  4390  0093  30FF               	movlw	255
-  4391  0094  00C7               	movwf	71	;volatile
+  4367                           ;initialize.c: 54:     TRISB = 0xFF;
+  4368  008E  30FF               	movlw	255
+  4369  008F  0092               	movwf	18	;volatile
+  4370  0090                     l851:
+  4371                           
+  4372                           ;initialize.c: 55:     TRISC = 0xFF;
+  4373  0090  30FF               	movlw	255
+  4374  0091  0093               	movwf	19	;volatile
+  4375  0092                     l853:
+  4376                           
+  4377                           ;initialize.c: 60:     ANSELC = 0xE7;
+  4378  0092  30E7               	movlw	231
+  4379  0093  003E               	movlb	30	; select bank30
+  4380  0094  00CE               	movwf	78	;volatile
+  4381  0095                     l855:
+  4382                           
+  4383                           ;initialize.c: 61:     ANSELB = 0xFF;
+  4384  0095  30FF               	movlw	255
+  4385  0096  00C3               	movwf	67	;volatile
+  4386                           
+  4387                           ;initialize.c: 62:     ANSELA = 0x00;
+  4388  0097  01B8               	clrf	56	;volatile
+  4389                           
+  4390                           ;initialize.c: 67:     WPUE = 0x00;
+  4391  0098  01E5               	clrf	101	;volatile
   4392                           
-  4393                           ;initialize.c: 91:     INLVLC = 0xFF;
-  4394  0095  30FF               	movlw	255
-  4395  0096  00D2               	movwf	82	;volatile
-  4396                           
-  4397                           ;initialize.c: 92:     INLVLE = 0x08;
-  4398  0097  3008               	movlw	8
-  4399  0098  00E8               	movwf	104	;volatile
-  4400                           
-  4401                           ;initialize.c: 94:     SSP1CLKPPS = 0x13;
-  4402  0099  3013               	movlw	19
-  4403  009A  003D               	movlb	29	; select bank29
-  4404  009B  00C5               	movwf	69	;volatile
-  4405                           
-  4406                           ;initialize.c: 95:     RC3PPS = 0x14;
-  4407  009C  3014               	movlw	20
-  4408  009D  003E               	movlb	30	; select bank30
-  4409  009E  00A3               	movwf	35	;volatile
-  4410                           
-  4411                           ;initialize.c: 96:     RC4PPS = 0x15;
-  4412  009F  3015               	movlw	21
-  4413  00A0  00A4               	movwf	36	;volatile
-  4414                           
-  4415                           ;initialize.c: 97:     SSP1DATPPS = 0x14;
-  4416  00A1  3014               	movlw	20
-  4417  00A2  003D               	movlb	29	; select bank29
-  4418  00A3  00C6               	movwf	70	;volatile
-  4419  00A4                     l94:
-  4420  00A4  0008               	return
-  4421  00A5                     __end_of_PIN_MANAGER_Initialize:
-  4422                           
-  4423                           	psect	text6
-  4424  0108                     __ptext6:	
-  4425 ;; *************** function _OSCILLATOR_Initialize *****************
-  4426 ;; Defined at:
-  4427 ;;		line 11 in file "initialize.c"
-  4428 ;; Parameters:    Size  Location     Type
-  4429 ;;		None
-  4430 ;; Auto vars:     Size  Location     Type
-  4431 ;;		None
-  4432 ;; Return value:  Size  Location     Type
-  4433 ;;                  1    wreg      void 
-  4434 ;; Registers used:
-  4435 ;;		wreg, status,2
-  4436 ;; Tracked objects:
-  4437 ;;		On entry : 0/0
-  4438 ;;		On exit  : 0/0
-  4439 ;;		Unchanged: 0/0
-  4440 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4441 ;;      Params:         0       0       0       0       0       0       0       0
-  4442 ;;      Locals:         0       0       0       0       0       0       0       0
-  4443 ;;      Temps:          0       0       0       0       0       0       0       0
-  4444 ;;      Totals:         0       0       0       0       0       0       0       0
-  4445 ;;Total ram usage:        0 bytes
-  4446 ;; Hardware stack levels used:    1
-  4447 ;; Hardware stack levels required when called:    1
-  4448 ;; This function calls:
-  4449 ;;		Nothing
-  4450 ;; This function is called by:
-  4451 ;;		_init
-  4452 ;; This function uses a non-reentrant model
-  4453 ;;
-  4454                           
+  4393                           ;initialize.c: 68:     WPUB = 0x00;
+  4394  0099  01C4               	clrf	68	;volatile
+  4395                           
+  4396                           ;initialize.c: 69:     WPUA = 0x00;
+  4397  009A  01B9               	clrf	57	;volatile
+  4398                           
+  4399                           ;initialize.c: 70:     WPUC = 0x00;
+  4400  009B  01CF               	clrf	79	;volatile
+  4401                           
+  4402                           ;initialize.c: 75:     ODCONA = 0x00;
+  4403  009C  01BA               	clrf	58	;volatile
+  4404                           
+  4405                           ;initialize.c: 76:     ODCONB = 0x00;
+  4406  009D  01C5               	clrf	69	;volatile
+  4407                           
+  4408                           ;initialize.c: 77:     ODCONC = 0x00;
+  4409  009E  01D0               	clrf	80	;volatile
+  4410  009F                     l857:
+  4411                           
+  4412                           ;initialize.c: 82:     SLRCONA = 0xFF;
+  4413  009F  30FF               	movlw	255
+  4414  00A0  00BB               	movwf	59	;volatile
+  4415  00A1                     l859:
+  4416                           
+  4417                           ;initialize.c: 83:     SLRCONB = 0xFF;
+  4418  00A1  30FF               	movlw	255
+  4419  00A2  00C6               	movwf	70	;volatile
+  4420  00A3                     l861:
+  4421                           
+  4422                           ;initialize.c: 84:     SLRCONC = 0xFF;
+  4423  00A3  30FF               	movlw	255
+  4424  00A4  00D1               	movwf	81	;volatile
+  4425  00A5                     l863:
+  4426                           
+  4427                           ;initialize.c: 89:     INLVLA = 0x00;
+  4428  00A5  01BC               	clrf	60	;volatile
+  4429                           
+  4430                           ;initialize.c: 90:     INLVLB = 0xFF;
+  4431  00A6  30FF               	movlw	255
+  4432  00A7  00C7               	movwf	71	;volatile
+  4433                           
+  4434                           ;initialize.c: 91:     INLVLC = 0xFF;
+  4435  00A8  30FF               	movlw	255
+  4436  00A9  00D2               	movwf	82	;volatile
+  4437                           
+  4438                           ;initialize.c: 92:     INLVLE = 0x08;
+  4439  00AA  3008               	movlw	8
+  4440  00AB  00E8               	movwf	104	;volatile
+  4441                           
+  4442                           ;initialize.c: 94:     SSP1CLKPPS = 0x13;
+  4443  00AC  3013               	movlw	19
+  4444  00AD  003D               	movlb	29	; select bank29
+  4445  00AE  00C5               	movwf	69	;volatile
+  4446                           
+  4447                           ;initialize.c: 95:     RC3PPS = 0x14;
+  4448  00AF  3014               	movlw	20
+  4449  00B0  003E               	movlb	30	; select bank30
+  4450  00B1  00A3               	movwf	35	;volatile
+  4451                           
+  4452                           ;initialize.c: 96:     RC4PPS = 0x15;
+  4453  00B2  3015               	movlw	21
+  4454  00B3  00A4               	movwf	36	;volatile
   4455                           
-  4456                           ;psect for function _OSCILLATOR_Initialize
-  4457  0108                     _OSCILLATOR_Initialize:
-  4458  0108                     l859:	
-  4459                           ;incstack = 0
-  4460                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
-  4461                           
-  4462                           
-  4463                           ;initialize.c: 14:     OSCCON1 = 0x60;
-  4464  0108  3060               	movlw	96
-  4465  0109  0031               	movlb	17	; select bank17
-  4466  010A  008D               	movwf	13	;volatile
-  4467  010B                     l861:
-  4468                           
-  4469                           ;initialize.c: 16:     OSCCON3 = 0x00;
-  4470  010B  018F               	clrf	15	;volatile
-  4471  010C                     l863:
-  4472                           
-  4473                           ;initialize.c: 18:     OSCEN = 0x00;
-  4474  010C  0191               	clrf	17	;volatile
-  4475                           
-  4476                           ;initialize.c: 20:     OSCFRQ = 0x02;
-  4477  010D  3002               	movlw	2
-  4478  010E  0093               	movwf	19	;volatile
-  4479  010F                     l865:
-  4480                           
-  4481                           ;initialize.c: 22:     OSCTUNE = 0x00;
-  4482  010F  0192               	clrf	18	;volatile
-  4483  0110                     l88:
-  4484  0110  0008               	return
-  4485  0111                     __end_of_OSCILLATOR_Initialize:
-  4486                           
-  4487                           	psect	text7
-  4488  00D9                     __ptext7:	
-  4489 ;; *************** function _I2C_Master_Write *****************
-  4490 ;; Defined at:
-  4491 ;;		line 19 in file "master/i2c_master.c"
-  4492 ;; Parameters:    Size  Location     Type
-  4493 ;;  data            1    wreg     unsigned char 
-  4494 ;; Auto vars:     Size  Location     Type
-  4495 ;;  data            1    1[COMMON] unsigned char 
-  4496 ;; Return value:  Size  Location     Type
-  4497 ;;                  1    wreg      void 
-  4498 ;; Registers used:
-  4499 ;;		wreg, status,2, status,0, pclath, cstack
-  4500 ;; Tracked objects:
-  4501 ;;		On entry : 0/0
-  4502 ;;		On exit  : 0/0
-  4503 ;;		Unchanged: 0/0
-  4504 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4505 ;;      Params:         0       0       0       0       0       0       0       0
-  4506 ;;      Locals:         1       0       0       0       0       0       0       0
-  4507 ;;      Temps:          0       0       0       0       0       0       0       0
-  4508 ;;      Totals:         1       0       0       0       0       0       0       0
-  4509 ;;Total ram usage:        1 bytes
-  4510 ;; Hardware stack levels used:    1
-  4511 ;; Hardware stack levels required when called:    2
-  4512 ;; This function calls:
-  4513 ;;		_I2C_Master_Wait
-  4514 ;; This function is called by:
-  4515 ;;		_main
-  4516 ;; This function uses a non-reentrant model
-  4517 ;;
-  4518                           
-  4519                           
-  4520                           ;psect for function _I2C_Master_Write
-  4521  00D9                     _I2C_Master_Write:
-  4522                           
-  4523                           ;incstack = 0
-  4524                           ; Regs used in _I2C_Master_Write: [wreg+status,2+status,0+pclath+cstack]
-  4525                           ;I2C_Master_Write@data stored from wreg
-  4526  00D9  00F1               	movwf	I2C_Master_Write@data
-  4527  00DA                     l925:
-  4528                           
-  4529                           ;master/i2c_master.c: 20:     I2C_Master_Wait();
-  4530  00DA  3180  20E7  3180   	fcall	_I2C_Master_Wait
-  4531  00DD                     l927:
-  4532                           
-  4533                           ;master/i2c_master.c: 21:     SSP1BUF = data;
-  4534  00DD  0871               	movf	I2C_Master_Write@data,w
-  4535  00DE  0023               	movlb	3	; select bank3
-  4536  00DF  008C               	movwf	12	;volatile
-  4537  00E0                     l188:	
-  4538                           ;master/i2c_master.c: 22:     while(!PIR3bits.SSP1IF);
-  4539                           
-  4540  00E0  002E               	movlb	14	; select bank14
-  4541  00E1  1C0F               	btfss	15,0	;volatile
-  4542  00E2  28E4               	goto	u31
-  4543  00E3  28E5               	goto	u30
-  4544  00E4                     u31:
-  4545  00E4  28E0               	goto	l188
-  4546  00E5                     u30:
-  4547  00E5                     l190:
-  4548                           
-  4549                           ;master/i2c_master.c: 23:     PIR3bits.SSP1IF = 0;
-  4550  00E5  100F               	bcf	15,0	;volatile
-  4551  00E6                     l191:
-  4552  00E6  0008               	return
-  4553  00E7                     __end_of_I2C_Master_Write:
-  4554                           
-  4555                           	psect	text8
-  4556  0119                     __ptext8:	
-  4557 ;; *************** function _I2C_Master_Stop *****************
-  4558 ;; Defined at:
-  4559 ;;		line 15 in file "master/i2c_master.c"
-  4560 ;; Parameters:    Size  Location     Type
-  4561 ;;		None
-  4562 ;; Auto vars:     Size  Location     Type
-  4563 ;;		None
-  4564 ;; Return value:  Size  Location     Type
-  4565 ;;                  1    wreg      void 
-  4566 ;; Registers used:
-  4567 ;;		wreg, status,2, status,0, pclath, cstack
-  4568 ;; Tracked objects:
-  4569 ;;		On entry : 0/0
-  4570 ;;		On exit  : 0/0
-  4571 ;;		Unchanged: 0/0
-  4572 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4573 ;;      Params:         0       0       0       0       0       0       0       0
-  4574 ;;      Locals:         0       0       0       0       0       0       0       0
-  4575 ;;      Temps:          0       0       0       0       0       0       0       0
-  4576 ;;      Totals:         0       0       0       0       0       0       0       0
-  4577 ;;Total ram usage:        0 bytes
-  4578 ;; Hardware stack levels used:    1
-  4579 ;; Hardware stack levels required when called:    2
-  4580 ;; This function calls:
-  4581 ;;		_I2C_Master_Wait
-  4582 ;; This function is called by:
-  4583 ;;		_main
-  4584 ;; This function uses a non-reentrant model
-  4585 ;;
-  4586                           
-  4587                           
-  4588                           ;psect for function _I2C_Master_Stop
-  4589  0119                     _I2C_Master_Stop:
-  4590  0119                     l921:	
-  4591                           ;incstack = 0
-  4592                           ; Regs used in _I2C_Master_Stop: [wreg+status,2+status,0+pclath+cstack]
-  4593                           
-  4594                           
-  4595                           ;master/i2c_master.c: 16:     I2C_Master_Wait();
-  4596  0119  3180  20E7  3181   	fcall	_I2C_Master_Wait
-  4597  011C                     l923:
-  4598                           
-  4599                           ;master/i2c_master.c: 17:     SSP1CON2bits.PEN = 1;
-  4600  011C  0023               	movlb	3	; select bank3
-  4601  011D  1511               	bsf	17,2	;volatile
-  4602  011E                     l185:
-  4603  011E  0008               	return
-  4604  011F                     __end_of_I2C_Master_Stop:
-  4605                           
-  4606                           	psect	text9
-  4607  011F                     __ptext9:	
-  4608 ;; *************** function _I2C_Master_Start *****************
-  4609 ;; Defined at:
-  4610 ;;		line 7 in file "master/i2c_master.c"
-  4611 ;; Parameters:    Size  Location     Type
-  4612 ;;		None
-  4613 ;; Auto vars:     Size  Location     Type
-  4614 ;;		None
-  4615 ;; Return value:  Size  Location     Type
-  4616 ;;                  1    wreg      void 
-  4617 ;; Registers used:
-  4618 ;;		wreg, status,2, status,0, pclath, cstack
-  4619 ;; Tracked objects:
-  4620 ;;		On entry : 0/0
-  4621 ;;		On exit  : 0/0
-  4622 ;;		Unchanged: 0/0
-  4623 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4624 ;;      Params:         0       0       0       0       0       0       0       0
-  4625 ;;      Locals:         0       0       0       0       0       0       0       0
-  4626 ;;      Temps:          0       0       0       0       0       0       0       0
-  4627 ;;      Totals:         0       0       0       0       0       0       0       0
-  4628 ;;Total ram usage:        0 bytes
-  4629 ;; Hardware stack levels used:    1
-  4630 ;; Hardware stack levels required when called:    2
-  4631 ;; This function calls:
-  4632 ;;		_I2C_Master_Wait
-  4633 ;; This function is called by:
-  4634 ;;		_main
-  4635 ;; This function uses a non-reentrant model
-  4636 ;;
-  4637                           
-  4638                           
-  4639                           ;psect for function _I2C_Master_Start
-  4640  011F                     _I2C_Master_Start:
-  4641  011F                     l917:	
-  4642                           ;incstack = 0
-  4643                           ; Regs used in _I2C_Master_Start: [wreg+status,2+status,0+pclath+cstack]
-  4644                           
-  4645                           
-  4646                           ;master/i2c_master.c: 8:     I2C_Master_Wait();
-  4647  011F  3180  20E7  3181   	fcall	_I2C_Master_Wait
-  4648  0122                     l919:
-  4649                           
-  4650                           ;master/i2c_master.c: 9:     SSP1CON2bits.SEN = 1;
-  4651  0122  0023               	movlb	3	; select bank3
-  4652  0123  1411               	bsf	17,0	;volatile
-  4653  0124                     l179:
-  4654  0124  0008               	return
-  4655  0125                     __end_of_I2C_Master_Start:
-  4656                           
-  4657                           	psect	text10
-  4658  00A5                     __ptext10:	
-  4659 ;; *************** function _I2C_Master_Read *****************
-  4660 ;; Defined at:
-  4661 ;;		line 25 in file "master/i2c_master.c"
-  4662 ;; Parameters:    Size  Location     Type
-  4663 ;;  get             1    wreg     unsigned char 
-  4664 ;; Auto vars:     Size  Location     Type
-  4665 ;;  get             1    2[COMMON] unsigned char 
-  4666 ;;  temp            1    3[COMMON] unsigned char 
-  4667 ;; Return value:  Size  Location     Type
-  4668 ;;                  1    wreg      unsigned char 
-  4669 ;; Registers used:
-  4670 ;;		wreg, status,2, status,0, pclath, cstack
-  4671 ;; Tracked objects:
-  4672 ;;		On entry : 0/0
-  4673 ;;		On exit  : 0/0
-  4674 ;;		Unchanged: 0/0
-  4675 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4676 ;;      Params:         0       0       0       0       0       0       0       0
-  4677 ;;      Locals:         2       0       0       0       0       0       0       0
-  4678 ;;      Temps:          1       0       0       0       0       0       0       0
-  4679 ;;      Totals:         3       0       0       0       0       0       0       0
-  4680 ;;Total ram usage:        3 bytes
-  4681 ;; Hardware stack levels used:    1
-  4682 ;; Hardware stack levels required when called:    2
-  4683 ;; This function calls:
-  4684 ;;		_I2C_Master_Wait
-  4685 ;; This function is called by:
-  4686 ;;		_main
-  4687 ;; This function uses a non-reentrant model
-  4688 ;;
-  4689                           
+  4456                           ;initialize.c: 97:     SSP1DATPPS = 0x14;
+  4457  00B4  3014               	movlw	20
+  4458  00B5  003D               	movlb	29	; select bank29
+  4459  00B6  00C6               	movwf	70	;volatile
+  4460  00B7                     l94:
+  4461  00B7  0008               	return
+  4462  00B8                     __end_of_PIN_MANAGER_Initialize:
+  4463                           
+  4464                           	psect	text6
+  4465  011B                     __ptext6:	
+  4466 ;; *************** function _OSCILLATOR_Initialize *****************
+  4467 ;; Defined at:
+  4468 ;;		line 11 in file "initialize.c"
+  4469 ;; Parameters:    Size  Location     Type
+  4470 ;;		None
+  4471 ;; Auto vars:     Size  Location     Type
+  4472 ;;		None
+  4473 ;; Return value:  Size  Location     Type
+  4474 ;;                  1    wreg      void 
+  4475 ;; Registers used:
+  4476 ;;		wreg, status,2
+  4477 ;; Tracked objects:
+  4478 ;;		On entry : 0/0
+  4479 ;;		On exit  : 0/0
+  4480 ;;		Unchanged: 0/0
+  4481 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4482 ;;      Params:         0       0       0       0       0       0       0       0
+  4483 ;;      Locals:         0       0       0       0       0       0       0       0
+  4484 ;;      Temps:          0       0       0       0       0       0       0       0
+  4485 ;;      Totals:         0       0       0       0       0       0       0       0
+  4486 ;;Total ram usage:        0 bytes
+  4487 ;; Hardware stack levels used:    1
+  4488 ;; Hardware stack levels required when called:    1
+  4489 ;; This function calls:
+  4490 ;;		Nothing
+  4491 ;; This function is called by:
+  4492 ;;		_init
+  4493 ;; This function uses a non-reentrant model
+  4494 ;;
+  4495                           
+  4496                           
+  4497                           ;psect for function _OSCILLATOR_Initialize
+  4498  011B                     _OSCILLATOR_Initialize:
+  4499  011B                     l865:	
+  4500                           ;incstack = 0
+  4501                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
+  4502                           
+  4503                           
+  4504                           ;initialize.c: 14:     OSCCON1 = 0x60;
+  4505  011B  3060               	movlw	96
+  4506  011C  0031               	movlb	17	; select bank17
+  4507  011D  008D               	movwf	13	;volatile
+  4508  011E                     l867:
+  4509                           
+  4510                           ;initialize.c: 16:     OSCCON3 = 0x00;
+  4511  011E  018F               	clrf	15	;volatile
+  4512  011F                     l869:
+  4513                           
+  4514                           ;initialize.c: 18:     OSCEN = 0x00;
+  4515  011F  0191               	clrf	17	;volatile
+  4516                           
+  4517                           ;initialize.c: 20:     OSCFRQ = 0x02;
+  4518  0120  3002               	movlw	2
+  4519  0121  0093               	movwf	19	;volatile
+  4520  0122                     l871:
+  4521                           
+  4522                           ;initialize.c: 22:     OSCTUNE = 0x00;
+  4523  0122  0192               	clrf	18	;volatile
+  4524  0123                     l88:
+  4525  0123  0008               	return
+  4526  0124                     __end_of_OSCILLATOR_Initialize:
+  4527                           
+  4528                           	psect	text7
+  4529  00EC                     __ptext7:	
+  4530 ;; *************** function _I2C_Master_Write *****************
+  4531 ;; Defined at:
+  4532 ;;		line 19 in file "master/i2c_master.c"
+  4533 ;; Parameters:    Size  Location     Type
+  4534 ;;  data            1    wreg     unsigned char 
+  4535 ;; Auto vars:     Size  Location     Type
+  4536 ;;  data            1    1[COMMON] unsigned char 
+  4537 ;; Return value:  Size  Location     Type
+  4538 ;;                  1    wreg      void 
+  4539 ;; Registers used:
+  4540 ;;		wreg, status,2, status,0, pclath, cstack
+  4541 ;; Tracked objects:
+  4542 ;;		On entry : 0/0
+  4543 ;;		On exit  : 0/0
+  4544 ;;		Unchanged: 0/0
+  4545 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4546 ;;      Params:         0       0       0       0       0       0       0       0
+  4547 ;;      Locals:         1       0       0       0       0       0       0       0
+  4548 ;;      Temps:          0       0       0       0       0       0       0       0
+  4549 ;;      Totals:         1       0       0       0       0       0       0       0
+  4550 ;;Total ram usage:        1 bytes
+  4551 ;; Hardware stack levels used:    1
+  4552 ;; Hardware stack levels required when called:    2
+  4553 ;; This function calls:
+  4554 ;;		_I2C_Master_Wait
+  4555 ;; This function is called by:
+  4556 ;;		_main
+  4557 ;; This function uses a non-reentrant model
+  4558 ;;
+  4559                           
+  4560                           
+  4561                           ;psect for function _I2C_Master_Write
+  4562  00EC                     _I2C_Master_Write:
+  4563                           
+  4564                           ;incstack = 0
+  4565                           ; Regs used in _I2C_Master_Write: [wreg+status,2+status,0+pclath+cstack]
+  4566                           ;I2C_Master_Write@data stored from wreg
+  4567  00EC  00F1               	movwf	I2C_Master_Write@data
+  4568  00ED                     l931:
+  4569                           
+  4570                           ;master/i2c_master.c: 20:     I2C_Master_Wait();
+  4571  00ED  3180  20FA  3180   	fcall	_I2C_Master_Wait
+  4572  00F0                     l933:
+  4573                           
+  4574                           ;master/i2c_master.c: 21:     SSP1BUF = data;
+  4575  00F0  0871               	movf	I2C_Master_Write@data,w
+  4576  00F1  0023               	movlb	3	; select bank3
+  4577  00F2  008C               	movwf	12	;volatile
+  4578  00F3                     l188:	
+  4579                           ;master/i2c_master.c: 22:     while(!PIR3bits.SSP1IF);
+  4580                           
+  4581  00F3  002E               	movlb	14	; select bank14
+  4582  00F4  1C0F               	btfss	15,0	;volatile
+  4583  00F5  28F7               	goto	u31
+  4584  00F6  28F8               	goto	u30
+  4585  00F7                     u31:
+  4586  00F7  28F3               	goto	l188
+  4587  00F8                     u30:
+  4588  00F8                     l190:
+  4589                           
+  4590                           ;master/i2c_master.c: 23:     PIR3bits.SSP1IF = 0;
+  4591  00F8  100F               	bcf	15,0	;volatile
+  4592  00F9                     l191:
+  4593  00F9  0008               	return
+  4594  00FA                     __end_of_I2C_Master_Write:
+  4595                           
+  4596                           	psect	text8
+  4597  012C                     __ptext8:	
+  4598 ;; *************** function _I2C_Master_Stop *****************
+  4599 ;; Defined at:
+  4600 ;;		line 15 in file "master/i2c_master.c"
+  4601 ;; Parameters:    Size  Location     Type
+  4602 ;;		None
+  4603 ;; Auto vars:     Size  Location     Type
+  4604 ;;		None
+  4605 ;; Return value:  Size  Location     Type
+  4606 ;;                  1    wreg      void 
+  4607 ;; Registers used:
+  4608 ;;		wreg, status,2, status,0, pclath, cstack
+  4609 ;; Tracked objects:
+  4610 ;;		On entry : 0/0
+  4611 ;;		On exit  : 0/0
+  4612 ;;		Unchanged: 0/0
+  4613 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4614 ;;      Params:         0       0       0       0       0       0       0       0
+  4615 ;;      Locals:         0       0       0       0       0       0       0       0
+  4616 ;;      Temps:          0       0       0       0       0       0       0       0
+  4617 ;;      Totals:         0       0       0       0       0       0       0       0
+  4618 ;;Total ram usage:        0 bytes
+  4619 ;; Hardware stack levels used:    1
+  4620 ;; Hardware stack levels required when called:    2
+  4621 ;; This function calls:
+  4622 ;;		_I2C_Master_Wait
+  4623 ;; This function is called by:
+  4624 ;;		_main
+  4625 ;; This function uses a non-reentrant model
+  4626 ;;
+  4627                           
+  4628                           
+  4629                           ;psect for function _I2C_Master_Stop
+  4630  012C                     _I2C_Master_Stop:
+  4631  012C                     l927:	
+  4632                           ;incstack = 0
+  4633                           ; Regs used in _I2C_Master_Stop: [wreg+status,2+status,0+pclath+cstack]
+  4634                           
+  4635                           
+  4636                           ;master/i2c_master.c: 16:     I2C_Master_Wait();
+  4637  012C  3180  20FA  3181   	fcall	_I2C_Master_Wait
+  4638  012F                     l929:
+  4639                           
+  4640                           ;master/i2c_master.c: 17:     SSP1CON2bits.PEN = 1;
+  4641  012F  0023               	movlb	3	; select bank3
+  4642  0130  1511               	bsf	17,2	;volatile
+  4643  0131                     l185:
+  4644  0131  0008               	return
+  4645  0132                     __end_of_I2C_Master_Stop:
+  4646                           
+  4647                           	psect	text9
+  4648  0132                     __ptext9:	
+  4649 ;; *************** function _I2C_Master_Start *****************
+  4650 ;; Defined at:
+  4651 ;;		line 7 in file "master/i2c_master.c"
+  4652 ;; Parameters:    Size  Location     Type
+  4653 ;;		None
+  4654 ;; Auto vars:     Size  Location     Type
+  4655 ;;		None
+  4656 ;; Return value:  Size  Location     Type
+  4657 ;;                  1    wreg      void 
+  4658 ;; Registers used:
+  4659 ;;		wreg, status,2, status,0, pclath, cstack
+  4660 ;; Tracked objects:
+  4661 ;;		On entry : 0/0
+  4662 ;;		On exit  : 0/0
+  4663 ;;		Unchanged: 0/0
+  4664 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4665 ;;      Params:         0       0       0       0       0       0       0       0
+  4666 ;;      Locals:         0       0       0       0       0       0       0       0
+  4667 ;;      Temps:          0       0       0       0       0       0       0       0
+  4668 ;;      Totals:         0       0       0       0       0       0       0       0
+  4669 ;;Total ram usage:        0 bytes
+  4670 ;; Hardware stack levels used:    1
+  4671 ;; Hardware stack levels required when called:    2
+  4672 ;; This function calls:
+  4673 ;;		_I2C_Master_Wait
+  4674 ;; This function is called by:
+  4675 ;;		_main
+  4676 ;; This function uses a non-reentrant model
+  4677 ;;
+  4678                           
+  4679                           
+  4680                           ;psect for function _I2C_Master_Start
+  4681  0132                     _I2C_Master_Start:
+  4682  0132                     l923:	
+  4683                           ;incstack = 0
+  4684                           ; Regs used in _I2C_Master_Start: [wreg+status,2+status,0+pclath+cstack]
+  4685                           
+  4686                           
+  4687                           ;master/i2c_master.c: 8:     I2C_Master_Wait();
+  4688  0132  3180  20FA  3181   	fcall	_I2C_Master_Wait
+  4689  0135                     l925:
   4690                           
-  4691                           ;psect for function _I2C_Master_Read
-  4692  00A5                     _I2C_Master_Read:
-  4693                           
-  4694                           ;incstack = 0
-  4695                           ; Regs used in _I2C_Master_Read: [wreg+status,2+status,0+pclath+cstack]
-  4696                           ;I2C_Master_Read@get stored from wreg
-  4697  00A5  00F2               	movwf	I2C_Master_Read@get
-  4698  00A6                     l929:
-  4699                           
-  4700                           ;master/i2c_master.c: 26:     uint8_t temp;;master/i2c_master.c: 27:     I2C_Master_Wait
+  4691                           ;master/i2c_master.c: 9:     SSP1CON2bits.SEN = 1;
+  4692  0135  0023               	movlb	3	; select bank3
+  4693  0136  1411               	bsf	17,0	;volatile
+  4694  0137                     l179:
+  4695  0137  0008               	return
+  4696  0138                     __end_of_I2C_Master_Start:
+  4697                           
+  4698                           	psect	text10
+  4699  00B8                     __ptext10:	
+  4700 ;; *************** function _I2C_Master_Read *****************
+  4701 ;; Defined at:
+  4702 ;;		line 25 in file "master/i2c_master.c"
+  4703 ;; Parameters:    Size  Location     Type
+  4704 ;;  get             1    wreg     unsigned char 
+  4705 ;; Auto vars:     Size  Location     Type
+  4706 ;;  get             1    2[COMMON] unsigned char 
+  4707 ;;  temp            1    3[COMMON] unsigned char 
+  4708 ;; Return value:  Size  Location     Type
+  4709 ;;                  1    wreg      unsigned char 
+  4710 ;; Registers used:
+  4711 ;;		wreg, status,2, status,0, pclath, cstack
+  4712 ;; Tracked objects:
+  4713 ;;		On entry : 0/0
+  4714 ;;		On exit  : 0/0
+  4715 ;;		Unchanged: 0/0
+  4716 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4717 ;;      Params:         0       0       0       0       0       0       0       0
+  4718 ;;      Locals:         2       0       0       0       0       0       0       0
+  4719 ;;      Temps:          1       0       0       0       0       0       0       0
+  4720 ;;      Totals:         3       0       0       0       0       0       0       0
+  4721 ;;Total ram usage:        3 bytes
+  4722 ;; Hardware stack levels used:    1
+  4723 ;; Hardware stack levels required when called:    2
+  4724 ;; This function calls:
+  4725 ;;		_I2C_Master_Wait
+  4726 ;; This function is called by:
+  4727 ;;		_main
+  4728 ;; This function uses a non-reentrant model
+  4729 ;;
+  4730                           
+  4731                           
+  4732                           ;psect for function _I2C_Master_Read
+  4733  00B8                     _I2C_Master_Read:
+  4734                           
+  4735                           ;incstack = 0
+  4736                           ; Regs used in _I2C_Master_Read: [wreg+status,2+status,0+pclath+cstack]
+  4737                           ;I2C_Master_Read@get stored from wreg
+  4738  00B8  00F2               	movwf	I2C_Master_Read@get
+  4739  00B9                     l935:
+  4740                           
+  4741                           ;master/i2c_master.c: 26:     uint8_t temp;;master/i2c_master.c: 27:     I2C_Master_Wait
       +                          ();
-  4701  00A6  3180  20E7  3180   	fcall	_I2C_Master_Wait
-  4702  00A9                     l931:
-  4703                           
-  4704                           ;master/i2c_master.c: 28:     SSP1CON2bits.RCEN = 1;
-  4705  00A9  0023               	movlb	3	; select bank3
-  4706  00AA  1591               	bsf	17,3	;volatile
-  4707                           
-  4708                           ;master/i2c_master.c: 29:     I2C_Master_Wait();
-  4709  00AB  3180  20E7  3180   	fcall	_I2C_Master_Wait
-  4710  00AE                     l933:
-  4711                           
-  4712                           ;master/i2c_master.c: 30:     temp = SSP1BUF;
-  4713  00AE  0023               	movlb	3	; select bank3
-  4714  00AF  080C               	movf	12,w	;volatile
-  4715  00B0  00F1               	movwf	??_I2C_Master_Read
-  4716  00B1  0871               	movf	??_I2C_Master_Read,w
-  4717  00B2  00F3               	movwf	I2C_Master_Read@temp
-  4718  00B3                     l935:
-  4719                           
-  4720                           ;master/i2c_master.c: 31:     I2C_Master_Wait();
-  4721  00B3  3180  20E7  3180   	fcall	_I2C_Master_Wait
-  4722  00B6                     l937:
-  4723                           
-  4724                           ;master/i2c_master.c: 32:     SSP1CON2bits.ACKDT = (get)?0:1;
-  4725  00B6  0872               	movf	I2C_Master_Read@get,w
-  4726  00B7  1903               	btfsc	3,2
-  4727  00B8  28BA               	goto	u41
-  4728  00B9  28BD               	goto	u40
-  4729  00BA                     u41:
-  4730  00BA  0023               	movlb	3	; select bank3
-  4731  00BB  1691               	bsf	17,5	;volatile
-  4732  00BC  28BF               	goto	u54
-  4733  00BD                     u40:
-  4734  00BD  0023               	movlb	3	; select bank3
-  4735  00BE  1291               	bcf	17,5	;volatile
-  4736  00BF                     u54:
-  4737  00BF                     l939:
-  4738                           
-  4739                           ;master/i2c_master.c: 33:     SSP1CON2bits.ACKEN = 1;
-  4740  00BF  1611               	bsf	17,4	;volatile
-  4741  00C0                     l941:
-  4742                           
-  4743                           ;master/i2c_master.c: 34:     return temp;
-  4744  00C0  0873               	movf	I2C_Master_Read@temp,w
-  4745  00C1                     l194:
-  4746  00C1  0008               	return
-  4747  00C2                     __end_of_I2C_Master_Read:
+  4742  00B9  3180  20FA  3180   	fcall	_I2C_Master_Wait
+  4743  00BC                     l937:
+  4744                           
+  4745                           ;master/i2c_master.c: 28:     SSP1CON2bits.RCEN = 1;
+  4746  00BC  0023               	movlb	3	; select bank3
+  4747  00BD  1591               	bsf	17,3	;volatile
   4748                           
-  4749                           	psect	text11
-  4750  00E7                     __ptext11:	
-  4751 ;; *************** function _I2C_Master_Wait *****************
-  4752 ;; Defined at:
-  4753 ;;		line 4 in file "master/i2c_master.c"
-  4754 ;; Parameters:    Size  Location     Type
-  4755 ;;		None
-  4756 ;; Auto vars:     Size  Location     Type
-  4757 ;;		None
-  4758 ;; Return value:  Size  Location     Type
-  4759 ;;                  1    wreg      void 
-  4760 ;; Registers used:
-  4761 ;;		wreg, status,2
-  4762 ;; Tracked objects:
-  4763 ;;		On entry : 0/0
-  4764 ;;		On exit  : 0/0
-  4765 ;;		Unchanged: 0/0
-  4766 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4767 ;;      Params:         0       0       0       0       0       0       0       0
-  4768 ;;      Locals:         0       0       0       0       0       0       0       0
-  4769 ;;      Temps:          0       0       0       0       0       0       0       0
-  4770 ;;      Totals:         0       0       0       0       0       0       0       0
-  4771 ;;Total ram usage:        0 bytes
-  4772 ;; Hardware stack levels used:    1
-  4773 ;; Hardware stack levels required when called:    1
-  4774 ;; This function calls:
-  4775 ;;		Nothing
-  4776 ;; This function is called by:
-  4777 ;;		_I2C_Master_Start
-  4778 ;;		_I2C_Master_Stop
-  4779 ;;		_I2C_Master_Write
-  4780 ;;		_I2C_Master_Read
-  4781 ;;		_main
-  4782 ;;		_I2C_Master_RepeatedStart
-  4783 ;; This function uses a non-reentrant model
-  4784 ;;
-  4785                           
-  4786                           
-  4787                           ;psect for function _I2C_Master_Wait
-  4788  00E7                     _I2C_Master_Wait:
-  4789  00E7                     l867:	
-  4790                           ;incstack = 0
-  4791                           ; Regs used in _I2C_Master_Wait: [wreg+status,2]
-  4792                           
-  4793  00E7                     l173:	
-  4794                           ;master/i2c_master.c: 5:     while ((SSP1STAT & 0x04) || (SSP1CON2 & 0x1F));
-  4795                           
-  4796  00E7  0023               	movlb	3	; select bank3
-  4797  00E8  190F               	btfsc	15,2	;volatile
-  4798  00E9  28EB               	goto	u11
-  4799  00EA  28EC               	goto	u10
-  4800  00EB                     u11:
-  4801  00EB  28E7               	goto	l173
-  4802  00EC                     u10:
-  4803  00EC                     l869:
-  4804  00EC  0811               	movf	17,w	;volatile
-  4805  00ED  391F               	andlw	31
-  4806  00EE  1D03               	btfss	3,2
-  4807  00EF  28F1               	goto	u21
-  4808  00F0  28F2               	goto	u20
-  4809  00F1                     u21:
-  4810  00F1  28E7               	goto	l173
-  4811  00F2                     u20:
-  4812  00F2                     l176:
-  4813  00F2  0008               	return
-  4814  00F3                     __end_of_I2C_Master_Wait:
-  4815                           
-  4816                           	psect	intentry
-  4817  0004                     __pintentry:	
-  4818 ;; *************** function _I2C_Slave_Read *****************
-  4819 ;; Defined at:
-  4820 ;;		line 9 in file "slave/i2c_slave.c"
-  4821 ;; Parameters:    Size  Location     Type
-  4822 ;;		None
-  4823 ;; Auto vars:     Size  Location     Type
-  4824 ;;		None
-  4825 ;; Return value:  Size  Location     Type
-  4826 ;;                  1    wreg      void 
-  4827 ;; Registers used:
-  4828 ;;		wreg
-  4829 ;; Tracked objects:
-  4830 ;;		On entry : 0/0
-  4831 ;;		On exit  : 0/0
-  4832 ;;		Unchanged: 0/0
-  4833 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  4834 ;;      Params:         0       0       0       0       0       0       0       0
-  4835 ;;      Locals:         0       0       0       0       0       0       0       0
-  4836 ;;      Temps:          1       0       0       0       0       0       0       0
-  4837 ;;      Totals:         1       0       0       0       0       0       0       0
-  4838 ;;Total ram usage:        1 bytes
-  4839 ;; Hardware stack levels used:    1
-  4840 ;; This function calls:
-  4841 ;;		Nothing
-  4842 ;; This function is called by:
-  4843 ;;		Interrupt level 1
-  4844 ;; This function uses a non-reentrant model
-  4845 ;;
-  4846                           
-  4847  0004                     _I2C_Slave_Read:
-  4848                           
-  4849                           ;incstack = 0
-  4850  0004  147E               	bsf	int$flags,0	;set compiler interrupt flag (level 1)
-  4851                           
-  4852                           ; Regs used in _I2C_Slave_Read: [wreg]
-  4853  0005  3180               	pagesel	$
-  4854  0006                     i1l945:
+  4749                           ;master/i2c_master.c: 29:     I2C_Master_Wait();
+  4750  00BE  3180  20FA  3180   	fcall	_I2C_Master_Wait
+  4751  00C1                     l939:
+  4752                           
+  4753                           ;master/i2c_master.c: 30:     temp = SSP1BUF;
+  4754  00C1  0023               	movlb	3	; select bank3
+  4755  00C2  080C               	movf	12,w	;volatile
+  4756  00C3  00F1               	movwf	??_I2C_Master_Read
+  4757  00C4  0871               	movf	??_I2C_Master_Read,w
+  4758  00C5  00F3               	movwf	I2C_Master_Read@temp
+  4759  00C6                     l941:
+  4760                           
+  4761                           ;master/i2c_master.c: 31:     I2C_Master_Wait();
+  4762  00C6  3180  20FA  3180   	fcall	_I2C_Master_Wait
+  4763  00C9                     l943:
+  4764                           
+  4765                           ;master/i2c_master.c: 32:     SSP1CON2bits.ACKDT = (get)?0:1;
+  4766  00C9  0872               	movf	I2C_Master_Read@get,w
+  4767  00CA  1903               	btfsc	3,2
+  4768  00CB  28CD               	goto	u41
+  4769  00CC  28D0               	goto	u40
+  4770  00CD                     u41:
+  4771  00CD  0023               	movlb	3	; select bank3
+  4772  00CE  1691               	bsf	17,5	;volatile
+  4773  00CF  28D2               	goto	u54
+  4774  00D0                     u40:
+  4775  00D0  0023               	movlb	3	; select bank3
+  4776  00D1  1291               	bcf	17,5	;volatile
+  4777  00D2                     u54:
+  4778  00D2                     l945:
+  4779                           
+  4780                           ;master/i2c_master.c: 33:     SSP1CON2bits.ACKEN = 1;
+  4781  00D2  1611               	bsf	17,4	;volatile
+  4782  00D3                     l947:
+  4783                           
+  4784                           ;master/i2c_master.c: 34:     return temp;
+  4785  00D3  0873               	movf	I2C_Master_Read@temp,w
+  4786  00D4                     l194:
+  4787  00D4  0008               	return
+  4788  00D5                     __end_of_I2C_Master_Read:
+  4789                           
+  4790                           	psect	text11
+  4791  00FA                     __ptext11:	
+  4792 ;; *************** function _I2C_Master_Wait *****************
+  4793 ;; Defined at:
+  4794 ;;		line 4 in file "master/i2c_master.c"
+  4795 ;; Parameters:    Size  Location     Type
+  4796 ;;		None
+  4797 ;; Auto vars:     Size  Location     Type
+  4798 ;;		None
+  4799 ;; Return value:  Size  Location     Type
+  4800 ;;                  1    wreg      void 
+  4801 ;; Registers used:
+  4802 ;;		wreg, status,2
+  4803 ;; Tracked objects:
+  4804 ;;		On entry : 0/0
+  4805 ;;		On exit  : 0/0
+  4806 ;;		Unchanged: 0/0
+  4807 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4808 ;;      Params:         0       0       0       0       0       0       0       0
+  4809 ;;      Locals:         0       0       0       0       0       0       0       0
+  4810 ;;      Temps:          0       0       0       0       0       0       0       0
+  4811 ;;      Totals:         0       0       0       0       0       0       0       0
+  4812 ;;Total ram usage:        0 bytes
+  4813 ;; Hardware stack levels used:    1
+  4814 ;; Hardware stack levels required when called:    1
+  4815 ;; This function calls:
+  4816 ;;		Nothing
+  4817 ;; This function is called by:
+  4818 ;;		_I2C_Master_Start
+  4819 ;;		_I2C_Master_Stop
+  4820 ;;		_I2C_Master_Write
+  4821 ;;		_I2C_Master_Read
+  4822 ;;		_I2C_Master_RepeatedStart
+  4823 ;; This function uses a non-reentrant model
+  4824 ;;
+  4825                           
+  4826                           
+  4827                           ;psect for function _I2C_Master_Wait
+  4828  00FA                     _I2C_Master_Wait:
+  4829  00FA                     l873:	
+  4830                           ;incstack = 0
+  4831                           ; Regs used in _I2C_Master_Wait: [wreg+status,2]
+  4832                           
+  4833  00FA                     l173:	
+  4834                           ;master/i2c_master.c: 5:     while ((SSP1STAT & 0x04) || (SSP1CON2 & 0x1F));
+  4835                           
+  4836  00FA  0023               	movlb	3	; select bank3
+  4837  00FB  190F               	btfsc	15,2	;volatile
+  4838  00FC  28FE               	goto	u11
+  4839  00FD  28FF               	goto	u10
+  4840  00FE                     u11:
+  4841  00FE  28FA               	goto	l173
+  4842  00FF                     u10:
+  4843  00FF                     l875:
+  4844  00FF  0811               	movf	17,w	;volatile
+  4845  0100  391F               	andlw	31
+  4846  0101  1D03               	btfss	3,2
+  4847  0102  2904               	goto	u21
+  4848  0103  2905               	goto	u20
+  4849  0104                     u21:
+  4850  0104  28FA               	goto	l173
+  4851  0105                     u20:
+  4852  0105                     l176:
+  4853  0105  0008               	return
+  4854  0106                     __end_of_I2C_Master_Wait:
   4855                           
-  4856                           ;slave/i2c_slave.c: 10:     if(PIR3bits.SSP1IF == 1){
-  4857  0006  002E               	movlb	14	; select bank14
-  4858  0007  1C0F               	btfss	15,0	;volatile
-  4859  0008  280A               	goto	u6_21
-  4860  0009  280B               	goto	u6_20
-  4861  000A                     u6_21:
-  4862  000A  2833               	goto	i1l120
-  4863  000B                     u6_20:
-  4864  000B                     i1l947:
-  4865                           
-  4866                           ;slave/i2c_slave.c: 11:         SSP1CON1bits.CKP = 0;
-  4867  000B  0023               	movlb	3	; select bank3
-  4868  000C  1210               	bcf	16,4	;volatile
-  4869                           
-  4870                           ;slave/i2c_slave.c: 13:         if ((SSP1CON1bits.SSPOV) || (SSP1CON1bits.WCOL)){
-  4871  000D  1B10               	btfsc	16,6	;volatile
-  4872  000E  2810               	goto	u7_21
-  4873  000F  2811               	goto	u7_20
-  4874  0010                     u7_21:
-  4875  0010  2815               	goto	i1l951
-  4876  0011                     u7_20:
-  4877  0011                     i1l949:
-  4878  0011  1F90               	btfss	16,7	;volatile
-  4879  0012  2814               	goto	u8_21
-  4880  0013  2815               	goto	u8_20
-  4881  0014                     u8_21:
-  4882  0014  281D               	goto	i1l112
-  4883  0015                     u8_20:
-  4884  0015                     i1l951:
-  4885                           
-  4886                           ;slave/i2c_slave.c: 14:             z = SSP1BUF;
-  4887  0015  080C               	movf	12,w	;volatile
-  4888  0016  00F0               	movwf	??_I2C_Slave_Read
-  4889  0017  0870               	movf	??_I2C_Slave_Read,w
-  4890  0018  00F7               	movwf	_z
-  4891  0019                     i1l953:
-  4892                           
-  4893                           ;slave/i2c_slave.c: 15:             SSP1CON1bits.SSPOV = 0;
-  4894  0019  1310               	bcf	16,6	;volatile
-  4895  001A                     i1l955:
-  4896                           
-  4897                           ;slave/i2c_slave.c: 16:             SSP1CON1bits.WCOL = 0;
-  4898  001A  1390               	bcf	16,7	;volatile
-  4899  001B                     i1l957:
-  4900                           
-  4901                           ;slave/i2c_slave.c: 17:             SSP1CON1bits.CKP = 1;
-  4902  001B  1610               	bsf	16,4	;volatile
-  4903                           
-  4904                           ;slave/i2c_slave.c: 18:         }
-  4905  001C  2831               	goto	i1l115
-  4906  001D                     i1l112:	
-  4907                           ;slave/i2c_slave.c: 33:         else if(!SSP1STATbits.D_nA && SSP1STATbits.R_nW){
-  4908                           
-  4909  001D  1A8F               	btfsc	15,5	;volatile
-  4910  001E  2820               	goto	u9_21
-  4911  001F  2821               	goto	u9_20
-  4912  0020                     u9_21:
-  4913  0020  2831               	goto	i1l115
-  4914  0021                     u9_20:
-  4915  0021                     i1l959:
-  4916  0021  1D0F               	btfss	15,2	;volatile
-  4917  0022  2824               	goto	u10_21
-  4918  0023  2825               	goto	u10_20
-  4919  0024                     u10_21:
-  4920  0024  2831               	goto	i1l115
-  4921  0025                     u10_20:
-  4922  0025                     i1l961:
-  4923                           
-  4924                           ;slave/i2c_slave.c: 34:         z = SSP1BUF;
-  4925  0025  080C               	movf	12,w	;volatile
-  4926  0026  00F0               	movwf	??_I2C_Slave_Read
-  4927  0027  0870               	movf	??_I2C_Slave_Read,w
-  4928  0028  00F7               	movwf	_z
-  4929  0029                     i1l963:
-  4930                           
-  4931                           ;slave/i2c_slave.c: 35:         SSP1STATbits.BF = 0;
-  4932  0029  100F               	bcf	15,0	;volatile
-  4933                           
-  4934                           ;slave/i2c_slave.c: 36:         SSP1BUF = 0xDB;
-  4935  002A  30DB               	movlw	219
-  4936  002B  008C               	movwf	12	;volatile
-  4937  002C                     i1l965:
-  4938                           
-  4939                           ;slave/i2c_slave.c: 37:         SSP1CON1bits.CKP = 1;
-  4940  002C  1610               	bsf	16,4	;volatile
-  4941  002D                     i1l117:	
-  4942                           ;slave/i2c_slave.c: 38:         while(SSP1STATbits.BF);
+  4856                           	psect	intentry
+  4857  0004                     __pintentry:	
+  4858 ;; *************** function _I2C_Slave_Read *****************
+  4859 ;; Defined at:
+  4860 ;;		line 9 in file "slave/i2c_slave.c"
+  4861 ;; Parameters:    Size  Location     Type
+  4862 ;;		None
+  4863 ;; Auto vars:     Size  Location     Type
+  4864 ;;		None
+  4865 ;; Return value:  Size  Location     Type
+  4866 ;;                  1    wreg      void 
+  4867 ;; Registers used:
+  4868 ;;		wreg
+  4869 ;; Tracked objects:
+  4870 ;;		On entry : 0/0
+  4871 ;;		On exit  : 0/0
+  4872 ;;		Unchanged: 0/0
+  4873 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  4874 ;;      Params:         0       0       0       0       0       0       0       0
+  4875 ;;      Locals:         0       0       0       0       0       0       0       0
+  4876 ;;      Temps:          1       0       0       0       0       0       0       0
+  4877 ;;      Totals:         1       0       0       0       0       0       0       0
+  4878 ;;Total ram usage:        1 bytes
+  4879 ;; Hardware stack levels used:    1
+  4880 ;; This function calls:
+  4881 ;;		Nothing
+  4882 ;; This function is called by:
+  4883 ;;		Interrupt level 1
+  4884 ;; This function uses a non-reentrant model
+  4885 ;;
+  4886                           
+  4887  0004                     _I2C_Slave_Read:
+  4888                           
+  4889                           ;incstack = 0
+  4890  0004  147E               	bsf	int$flags,0	;set compiler interrupt flag (level 1)
+  4891                           
+  4892                           ; Regs used in _I2C_Slave_Read: [wreg]
+  4893  0005  3180               	pagesel	$
+  4894  0006                     i1l951:
+  4895                           
+  4896                           ;slave/i2c_slave.c: 10:     if(PIR3bits.SSP1IF == 1){
+  4897  0006  002E               	movlb	14	; select bank14
+  4898  0007  1C0F               	btfss	15,0	;volatile
+  4899  0008  280A               	goto	u6_21
+  4900  0009  280B               	goto	u6_20
+  4901  000A                     u6_21:
+  4902  000A  2833               	goto	i1l120
+  4903  000B                     u6_20:
+  4904  000B                     i1l953:
+  4905                           
+  4906                           ;slave/i2c_slave.c: 11:         SSP1CON1bits.CKP = 0;
+  4907  000B  0023               	movlb	3	; select bank3
+  4908  000C  1210               	bcf	16,4	;volatile
+  4909                           
+  4910                           ;slave/i2c_slave.c: 13:         if ((SSP1CON1bits.SSPOV) || (SSP1CON1bits.WCOL)){
+  4911  000D  1B10               	btfsc	16,6	;volatile
+  4912  000E  2810               	goto	u7_21
+  4913  000F  2811               	goto	u7_20
+  4914  0010                     u7_21:
+  4915  0010  2815               	goto	i1l957
+  4916  0011                     u7_20:
+  4917  0011                     i1l955:
+  4918  0011  1F90               	btfss	16,7	;volatile
+  4919  0012  2814               	goto	u8_21
+  4920  0013  2815               	goto	u8_20
+  4921  0014                     u8_21:
+  4922  0014  281D               	goto	i1l112
+  4923  0015                     u8_20:
+  4924  0015                     i1l957:
+  4925                           
+  4926                           ;slave/i2c_slave.c: 14:             z = SSP1BUF;
+  4927  0015  080C               	movf	12,w	;volatile
+  4928  0016  00F0               	movwf	??_I2C_Slave_Read
+  4929  0017  0870               	movf	??_I2C_Slave_Read,w
+  4930  0018  00F8               	movwf	_z
+  4931  0019                     i1l959:
+  4932                           
+  4933                           ;slave/i2c_slave.c: 15:             SSP1CON1bits.SSPOV = 0;
+  4934  0019  1310               	bcf	16,6	;volatile
+  4935  001A                     i1l961:
+  4936                           
+  4937                           ;slave/i2c_slave.c: 16:             SSP1CON1bits.WCOL = 0;
+  4938  001A  1390               	bcf	16,7	;volatile
+  4939  001B                     i1l963:
+  4940                           
+  4941                           ;slave/i2c_slave.c: 17:             SSP1CON1bits.CKP = 1;
+  4942  001B  1610               	bsf	16,4	;volatile
   4943                           
-  4944  002D  180F               	btfsc	15,0	;volatile
-  4945  002E  2830               	goto	u11_21
-  4946  002F  2831               	goto	u11_20
-  4947  0030                     u11_21:
-  4948  0030  282D               	goto	i1l117
-  4949  0031                     u11_20:
-  4950  0031                     i1l115:
-  4951                           
-  4952                           ;slave/i2c_slave.c: 41:     PIR3bits.SSP1IF = 0;
-  4953  0031  002E               	movlb	14	; select bank14
-  4954  0032  100F               	bcf	15,0	;volatile
-  4955  0033                     i1l120:
-  4956  0033  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
-  4957  0034  0009               	retfie
-  4958  0035                     __end_of_I2C_Slave_Read:
-  4959  007E                     btemp	set	126	;btemp
-  4960  007E                     int$flags	set	126
-  4961  007E                     wtemp0	set	126
+  4944                           ;slave/i2c_slave.c: 18:         }
+  4945  001C  2831               	goto	i1l115
+  4946  001D                     i1l112:	
+  4947                           ;slave/i2c_slave.c: 33:         else if(!SSP1STATbits.D_nA && SSP1STATbits.R_nW){
+  4948                           
+  4949  001D  1A8F               	btfsc	15,5	;volatile
+  4950  001E  2820               	goto	u9_21
+  4951  001F  2821               	goto	u9_20
+  4952  0020                     u9_21:
+  4953  0020  2831               	goto	i1l115
+  4954  0021                     u9_20:
+  4955  0021                     i1l965:
+  4956  0021  1D0F               	btfss	15,2	;volatile
+  4957  0022  2824               	goto	u10_21
+  4958  0023  2825               	goto	u10_20
+  4959  0024                     u10_21:
+  4960  0024  2831               	goto	i1l115
+  4961  0025                     u10_20:
+  4962  0025                     i1l967:
+  4963                           
+  4964                           ;slave/i2c_slave.c: 34:         z = SSP1BUF;
+  4965  0025  080C               	movf	12,w	;volatile
+  4966  0026  00F0               	movwf	??_I2C_Slave_Read
+  4967  0027  0870               	movf	??_I2C_Slave_Read,w
+  4968  0028  00F8               	movwf	_z
+  4969  0029                     i1l969:
+  4970                           
+  4971                           ;slave/i2c_slave.c: 35:         SSP1STATbits.BF = 0;
+  4972  0029  100F               	bcf	15,0	;volatile
+  4973                           
+  4974                           ;slave/i2c_slave.c: 36:         SSP1BUF = 0xDB;
+  4975  002A  30DB               	movlw	219
+  4976  002B  008C               	movwf	12	;volatile
+  4977  002C                     i1l971:
+  4978                           
+  4979                           ;slave/i2c_slave.c: 37:         SSP1CON1bits.CKP = 1;
+  4980  002C  1610               	bsf	16,4	;volatile
+  4981  002D                     i1l117:	
+  4982                           ;slave/i2c_slave.c: 38:         while(SSP1STATbits.BF);
+  4983                           
+  4984  002D  180F               	btfsc	15,0	;volatile
+  4985  002E  2830               	goto	u11_21
+  4986  002F  2831               	goto	u11_20
+  4987  0030                     u11_21:
+  4988  0030  282D               	goto	i1l117
+  4989  0031                     u11_20:
+  4990  0031                     i1l115:
+  4991                           
+  4992                           ;slave/i2c_slave.c: 41:     PIR3bits.SSP1IF = 0;
+  4993  0031  002E               	movlb	14	; select bank14
+  4994  0032  100F               	bcf	15,0	;volatile
+  4995  0033                     i1l120:
+  4996  0033  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
+  4997  0034  0009               	retfie
+  4998  0035                     __end_of_I2C_Slave_Read:
+  4999  007E                     btemp	set	126	;btemp
+  5000  007E                     int$flags	set	126
+  5001  007E                     wtemp0	set	126
 
 Data Sizes:
     Strings     0
     Constant    0
     Data        0
-    BSS         3
+    BSS         4
     Persistent  32
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMMON           14      5       8
+    COMMON           14      5       9
     BANK0            80      0       0
     BANK1            80      0       0
     BANK2            80      0       0
@@ -5072,7 +5112,6 @@ Call Graph Tables:
                     _I2C_Master_Read
                    _I2C_Master_Start
                     _I2C_Master_Stop
-                    _I2C_Master_Wait
                    _I2C_Master_Write
                                _init
                         _master_init
@@ -5129,7 +5168,6 @@ Call Graph Tables:
      _I2C_Master_Wait
    _I2C_Master_Stop
      _I2C_Master_Wait
-   _I2C_Master_Wait
    _I2C_Master_Write
      _I2C_Master_Wait
    _init
@@ -5150,7 +5188,7 @@ CODE                 0      0       0       0        0.0%
 BITCOMMON            E      0       0       1        0.0%
 BITSFR0              0      0       0       1        0.0%
 SFR0                 0      0       0       1        0.0%
-COMMON               E      5       8       2       57.1%
+COMMON               E      5       9       2       64.3%
 BITSFR1              0      0       0       2        0.0%
 SFR1                 0      0       0       2        0.0%
 BITSFR2              0      0       0       3        0.0%
@@ -5158,7 +5196,7 @@ SFR2                 0      0       0       3        0.0%
 STACK                0      0       0       3        0.0%
 BITSFR3              0      0       0       4        0.0%
 SFR3                 0      0       0       4        0.0%
-ABS                  0      0       8       4        0.0%
+ABS                  0      0       9       4        0.0%
 BITBANK0            50      0       0       5        0.0%
 BITSFR4              0      0       0       5        0.0%
 SFR4                 0      0       0       5        0.0%
@@ -5203,7 +5241,7 @@ BITSFR17             0      0       0      18        0.0%
 SFR17                0      0       0      18        0.0%
 BITSFR18             0      0       0      19        0.0%
 SFR18                0      0       0      19        0.0%
-DATA                 0      0       8      19        0.0%
+DATA                 0      0       9      19        0.0%
 BITSFR19             0      0       0      20        0.0%
 SFR19                0      0       0      20        0.0%
 BITSFR20             0      0       0      21        0.0%
@@ -5233,93 +5271,97 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Tue Dec 15 16:50:27 2020
+Symbol Table                                                                                   Tue Dec 22 15:36:07 2020
 
-                              _y 0076                                _z 0077                               l91 0118  
-                             l85 0107                               l94 00A4                               l88 0110  
-                             u10 00EC                               u11 00EB                               u20 00F2  
-                             u21 00F1                               u30 00E5                               u31 00E4  
-                             u40 00BD                               u41 00BA                               u54 00BF  
-                            l160 00FD                              l226 0073                              l147 00D8  
-                            l227 0073                              l173 00E7                              l190 00E5  
-                            l191 00E6                              l176 00F2                              l185 011E  
-                            l194 00C1                              l179 0124                              l188 00E0  
-                            l901 00D6                              l911 00F8                              l903 00D7  
-                            l921 0119                              l841 0076                              l913 00F9  
-                            l905 00F3                              l931 00A9                              l923 011C  
-                            l851 008C                              l843 007B                              l915 00FB  
-                            l907 00F6                              l941 00C0                              l933 00AE  
-                            l917 011F                              l925 00DA                              l861 010B  
-                            l853 008E                              l845 007D                              l909 00F7  
-                            l935 00B3                              l919 0122                              l927 00DD  
-                            l863 010C                              l855 0090                              l847 007F  
-                            l839 0111                              l871 00FE                              l937 00B6  
-                            l929 00A6                              l865 010F                              l857 0092  
-                            l849 0082                              l873 0101                              l881 00C8  
-                            l867 00E7                              l939 00BF                              l859 0108  
-                            l875 0104                              l891 00D0                              l883 00CA  
-                            l971 003E                              l869 00EC                              l893 00D1  
-                            l885 00CC                              l877 00C3                              l973 0066  
-                            l895 00D2                              l887 00CE                              l879 00C6  
-                            l975 006C                              l897 00D3                              l889 00CF  
-                            l977 006F                              l899 00D5                              _GIE 005F  
-                            _RA4 0064                              _RA5 0065                              u120 006C  
-                            u121 006B          __size_of_PMD_Initialize 0008                             _LATA 0016  
-                           _LATB 0017                             _LATC 0018                             _PEIE 005E  
-                           _PMD0 0796                             _PMD1 0797                             _PMD2 0798  
-                           _PMD3 0799                             _PMD4 079A                             _PMD5 079B  
-                           _WPUA 0F39                             _WPUB 0F44                             _WPUC 0F4F  
-                           _WPUE 0F65                             u6_20 000B                             u6_21 000A  
-                           u7_20 0011                             u7_21 0010                             u8_20 0015  
-                           u8_21 0014                             u9_20 0021                             u9_21 0020  
-                           _main 003E                             _init 00FE                             btemp 007E  
-                           start 0035                 ?_I2C_Master_Read 0070                 ?_I2C_Master_Wait 0070  
-               ?_I2C_Master_Stop 0070   __size_of_OSCILLATOR_Initialize 0009    __end_of_OSCILLATOR_Initialize 0111  
-                          ?_main 0070                            ?_init 0070                            i1l112 001D  
-                          i1l120 0033                            i1l115 0031                            i1l117 002D  
-                          i1l951 0015                            i1l961 0025                            i1l953 0019  
-                          i1l945 0006                            i1l963 0029                            i1l955 001A  
-                          i1l947 000B                            i1l965 002C                            i1l957 001B  
-                          i1l949 0011                            i1l959 0021                            u10_20 0025  
-                          u10_21 0024                            u11_20 0031                            u11_21 0030  
-                          _OSCEN 0891                            _TRISA 0011                            _TRISB 0012  
-                          _TRISC 0013                     ?_master_init 0070                            status 0003  
-                          wtemp0 007E                  __initialization 0037                     __end_of_main 0076  
-                   __end_of_init 0108                           ??_main 0074                           ??_init 0071  
-              ?_I2C_Master_Start 0070                ?_I2C_Master_Write 0070               ??_I2C_Master_Start 0071  
-             ??_I2C_Master_Write 0071                           _ANSELA 0F38                           _ANSELB 0F43  
-                         _ANSELC 0F4E                           _RC3PPS 0F23                           _RC4PPS 0F24  
-                         _ODCONA 0F3A                           _ODCONB 0F45                           _ODCONC 0F50  
-                         _INLVLA 0F3C                           _INLVLB 0F47                           _INLVLC 0F52  
-                         _INLVLE 0F68                           _OSCFRQ 0893                   _PMD_Initialize 0111  
-        __end_of__initialization 003A                   __pcstackCOMMON 0070          __size_of_I2C_Slave_Read 0031  
-         __end_of_PMD_Initialize 0119             __size_of_master_init 000B                       __pmaintext 003E  
-                     __pintentry 0004                  ?_PMD_Initialize 0070                          _OSCCON1 088D  
-                        _OSCCON3 088F                          _OSCTUNE 0892                          _SSP1ADD 018D  
-                        _SLRCONA 0F3B                          _SLRCONB 0F46                          _SLRCONC 0F51  
-                        _SSP1BUF 018C                          _SSP1MSK 018E                          __ptext1 00C2  
-                        __ptext2 00F3                          __ptext3 00FE                          __ptext4 0111  
-                        __ptext5 0076                          __ptext6 0108                          __ptext7 00D9  
-                        __ptext8 0119                          __ptext9 011F            _OSCILLATOR_Initialize 0108  
+                              _y 0077                                _z 0078                               l91 012B  
+                             l85 011A                               l94 00B7                               l88 0123  
+                             u10 00FF                               u11 00FE                               u20 0105  
+                             u21 0104                               u30 00F8                               u31 00F7  
+                             u40 00D0                               u41 00CD                               u54 00D2  
+                            l160 0110                              l232 0086                              l147 00EB  
+                            l228 0073                              l173 00FA                              l229 007A  
+                            l190 00F8                              l191 00F9                              l176 0105  
+                            l185 0131                              l194 00D4                              l179 0137  
+                            l188 00F3                              l901 00E5                              l911 0106  
+                            l903 00E6                              l921 010E                              l913 0109  
+                            l905 00E8                              l923 0132                              l931 00ED  
+                            l851 0090                              l915 010A                              l907 00E9  
+                            l941 00C6                              l925 0135                              l933 00F0  
+                            l861 00A3                              l853 0092                              l845 0124  
+                            l917 010B                              l909 00EA                              l943 00C9  
+                            l935 00B9                              l927 012C                              l871 0122  
+                            l863 00A5                              l855 0095                              l847 0089  
+                            l919 010C                              l873 00FA                              l945 00D2  
+                            l937 00BC                              l929 012F                              l865 011B  
+                            l857 009F                              l849 008E                              l881 0117  
+                            l875 00FF                              l947 00D3                              l939 00C1  
+                            l867 011E                              l859 00A1                              l891 00DF  
+                            l883 00D6                              l869 011F                              l877 0111  
+                            l893 00E1                              l885 00D9                              l981 0047  
+                            l879 0114                              l895 00E2                              l887 00DB  
+                            l991 0082                              l983 0069                              l897 00E3  
+                            l889 00DD                              l985 006F                              l977 003F  
+                            l899 00E4                              l987 0078                              l979 0042  
+                            _GIE 005F                              l989 007D                              _RA2 0062  
+                            _RA4 0064                              u120 0047                              u121 0046  
+                            u130 006F                              u131 006E                              u140 0078  
+                            u141 0077                              u150 0082                              u151 0081  
+        __size_of_PMD_Initialize 0008                             _LATA 0016                             _LATB 0017  
+                           _LATC 0018                             _PEIE 005E                             _PMD0 0796  
+                           _PMD1 0797                             _PMD2 0798                             _PMD3 0799  
+                           _PMD4 079A                             _PMD5 079B                             _WPUA 0F39  
+                           _WPUB 0F44                             _WPUC 0F4F                             _WPUE 0F65  
+                           u6_20 000B                             u6_21 000A                             u7_20 0011  
+                           u7_21 0010                             u8_20 0015                             u8_21 0014  
+                           u9_20 0021                             u9_21 0020                             _main 003F  
+                           _init 0111                             btemp 007E                             start 0035  
+               ?_I2C_Master_Read 0070                 ?_I2C_Master_Wait 0070                 ?_I2C_Master_Stop 0070  
+ __size_of_OSCILLATOR_Initialize 0009    __end_of_OSCILLATOR_Initialize 0124                            ?_main 0070  
+                          ?_init 0070                            i1l112 001D                            i1l120 0033  
+                          i1l115 0031                            i1l117 002D                            i1l951 0006  
+                          i1l961 001A                            i1l953 000B                            i1l971 002C  
+                          i1l963 001B                            i1l955 0011                            i1l965 0021  
+                          i1l957 0015                            i1l967 0025                            i1l959 0019  
+                          i1l969 0029                            u10_20 0025                            u10_21 0024  
+                          u11_20 0031                            u11_21 0030                            _OSCEN 0891  
+                          _TRISA 0011                            _TRISB 0012                            _TRISC 0013  
+                   ?_master_init 0070                            status 0003                            wtemp0 007E  
+                __initialization 0037                     __end_of_main 0089                     __end_of_init 011B  
+                         ??_main 0074                           ??_init 0071                ?_I2C_Master_Start 0070  
+              ?_I2C_Master_Write 0070               ??_I2C_Master_Start 0071               ??_I2C_Master_Write 0071  
+                         _ANSELA 0F38                           _ANSELB 0F43                           _ANSELC 0F4E  
+                         _RC3PPS 0F23                           _RC4PPS 0F24                           _ODCONA 0F3A  
+                         _ODCONB 0F45                           _ODCONC 0F50                           _INLVLA 0F3C  
+                         _INLVLB 0F47                           _INLVLC 0F52                           _INLVLE 0F68  
+                         _OSCFRQ 0893                   _PMD_Initialize 0124          __end_of__initialization 003B  
+                 __pcstackCOMMON 0070          __size_of_I2C_Slave_Read 0031           __end_of_PMD_Initialize 012C  
+           __size_of_master_init 000B                       __pmaintext 003F                       __pintentry 0004  
+                ?_PMD_Initialize 0070                          _OSCCON1 088D                          _OSCCON3 088F  
+                        _OSCTUNE 0892                          _SSP1ADD 018D                          _SLRCONA 0F3B  
+                        _SLRCONB 0F46                          _SLRCONC 0F51                          _SSP1BUF 018C  
+                        _SSP1MSK 018E                   _ever_be_master 0075                          __ptext1 00D5  
+                        __ptext2 0106                          __ptext3 0111                          __ptext4 0124  
+                        __ptext5 0089                          __ptext6 011B                          __ptext7 00EC  
+                        __ptext8 012C                          __ptext9 0132            _OSCILLATOR_Initialize 011B  
        ??_PIN_MANAGER_Initialize 0071         __size_of_I2C_Master_Read 001D         __size_of_I2C_Master_Wait 000C  
-       __size_of_I2C_Master_Stop 0006             end_of_initialization 003A        __size_of_I2C_Master_Start 0006  
-      __size_of_I2C_Master_Write 000E                   _I2C_Slave_Read 0004                       _slave_init 00C2  
+       __size_of_I2C_Master_Stop 0006             end_of_initialization 003B        __size_of_I2C_Master_Start 0006  
+      __size_of_I2C_Master_Write 000E                   _I2C_Slave_Read 0004                       _slave_init 00D5  
          __end_of_I2C_Slave_Read 0035           ?_OSCILLATOR_Initialize 0070              start_initialization 0037  
 __size_of_PIN_MANAGER_Initialize 002F                ??_I2C_Master_Read 0071                ??_I2C_Master_Wait 0071  
               ??_I2C_Master_Stop 0071                  ?_I2C_Slave_Read 0070                 ??_PMD_Initialize 0071  
                     ?_slave_init 0070                      __pbssCOMMON 0075                        ___latbits 0001  
-                  ??_master_init 0071                 _I2C_Master_Start 011F                 _I2C_Master_Write 00D9  
-         _PIN_MANAGER_Initialize 0076             I2C_Master_Write@data 0071              __size_of_slave_init 0017  
-            __end_of_master_init 00FE                         _PIE3bits 0719                         _PIR3bits 070F  
+                  ??_master_init 0071                 _I2C_Master_Start 0132                 _I2C_Master_Write 00EC  
+         _PIN_MANAGER_Initialize 0089             I2C_Master_Write@data 0071              __size_of_slave_init 0017  
+            __end_of_master_init 0111                         _PIE3bits 0719                         _PIR3bits 070F  
                        _SSP1CON1 0190                         _SSP1CON2 0191                         _SSP1CON3 0192  
                        _SSP1STAT 018F              I2C_Master_Read@temp 0073          ??_OSCILLATOR_Initialize 0071  
-                _I2C_Master_Read 00A5                  _I2C_Master_Wait 00E7                  _I2C_Master_Stop 0119  
-                    _master_init 00F3                         __ptext10 00A5                         __ptext11 00E7  
+                _I2C_Master_Read 00B8                  _I2C_Master_Wait 00FA                  _I2C_Master_Stop 012C  
+                    _master_init 0106                         __ptext10 00B8                         __ptext11 00FA  
                    _SSP1CON1bits 0190                     _SSP1CON2bits 0191                     _SSP1CON3bits 0192  
-                _leader_feedback 0075                 ??_I2C_Slave_Read 0070                    __size_of_main 0038  
+                _leader_feedback 0076                 ??_I2C_Slave_Read 0070                    __size_of_main 004A  
                   __size_of_init 000A                         int$flags 007E                     ??_slave_init 0071  
-                   _SSP1STATbits 018F               I2C_Master_Read@get 0072         __end_of_I2C_Master_Start 0125  
-       __end_of_I2C_Master_Write 00E7                         intlevel1 0000               __end_of_slave_init 00D9  
-        ?_PIN_MANAGER_Initialize 0070                slave_init@address 0071          __end_of_I2C_Master_Read 00C2  
-        __end_of_I2C_Master_Wait 00F3          __end_of_I2C_Master_Stop 011F                       _SSP1DATPPS 0EC6  
-                     _SSP1CLKPPS 0EC5   __end_of_PIN_MANAGER_Initialize 00A5  
+                   _SSP1STATbits 018F               I2C_Master_Read@get 0072         __end_of_I2C_Master_Start 0138  
+       __end_of_I2C_Master_Write 00FA                         intlevel1 0000               __end_of_slave_init 00EC  
+        ?_PIN_MANAGER_Initialize 0070                slave_init@address 0071          __end_of_I2C_Master_Read 00D5  
+        __end_of_I2C_Master_Wait 0106          __end_of_I2C_Master_Stop 0132                       _SSP1DATPPS 0EC6  
+                     _SSP1CLKPPS 0EC5   __end_of_PIN_MANAGER_Initialize 00B8  

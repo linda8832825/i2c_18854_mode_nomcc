@@ -19806,34 +19806,41 @@ void slave_init(uint8_t address);
 
 
 uint8_t leader_feedback=0x00;
+uint8_t ever_be_master=0x00;
 
 void main(void) {
-    I2C_Master_Wait();
+
     init();
-    master_init();
+    if(ever_be_master==0x00){
+        master_init();
 
 
-    I2C_Master_Start();
-    I2C_Master_Write((0x67 << 1)|0);
-    I2C_Master_Write(0xBC);
-    I2C_Master_Stop();
+        I2C_Master_Start();
+        I2C_Master_Write((0x67 << 1)|0);
+        I2C_Master_Write(0xBC);
+        I2C_Master_Stop();
 
 
-    I2C_Master_Start();
-    I2C_Master_Write((0x67 << 1)|1);
-    leader_feedback=I2C_Master_Read(0);
-    I2C_Master_Stop();
+        I2C_Master_Start();
+        I2C_Master_Write((0x67 << 1)|1);
+        leader_feedback=I2C_Master_Read(0);
+        I2C_Master_Stop();
 
 
-    if(leader_feedback==0x5A){
-        RA4=1;
-        RA5=0;
+        if(leader_feedback==0x5A){
+            RA2=1;
+            ever_be_master=0x01;
+        }
+
+        if(SSP1STATbits.S==1) RA4=1;
+        RA4=0;
     }
+    else if(ever_be_master==0x01){
+
+        slave_init(leader_feedback);
 
 
-    slave_init(leader_feedback);
-
-
+    }
 
 
     while(1);
