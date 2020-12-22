@@ -3,7 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/linda/MPLABXProjects/i2c_18854_mode_nomcc.X/main_mode.c</file>
+=======
+            <file>file:/C:/Users/linda/MPLABXProjects/i2c_18854_mode_nomcc.X/slave/i2c_slave.c</file>
+            <file>file:/C:/Users/linda/MPLABXProjects/i2c_18854_mode_nomcc.X/slave/init_slave.c</file>
+            <file>file:/C:/Users/linda/MPLABXProjects/i2c_18854_mode_nomcc.X/main_mode.c</file>
+            <file>file:/C:/Users/linda/MPLABXProjects/i2c_18854_mode_nomcc.X/slave/init_slave.h</file>
+            <file>file:/C:/Users/linda/MPLABXProjects/i2c_18854_mode_nomcc.X/master/i2c_master.c</file>
+>>>>>>> f0e3c5596c7289895c280110a1d2ffecece017c8
         </group>
     </open-files>
 </project-private>
