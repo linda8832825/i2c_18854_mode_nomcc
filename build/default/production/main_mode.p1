@@ -3,9 +3,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6 ./initialize.h
 [; ;./initialize.h: 6: void init(void);
 [v _init `(v ~T0 @X0 0 ef ]
-"385 C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 385: extern volatile unsigned char PORTA __attribute__((address(0x00C)));
-[v _PORTA `Vuc ~T0 @X0 0 e@12 ]
 "6 ./master/init_master.h
 [; ;./master/init_master.h: 6: void master_init(void);
 [v _master_init `(v ~T0 @X0 0 ef ]
@@ -24,104 +21,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39557 C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h
 [; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 39557: extern volatile __bit RA2 __attribute__((address(0x62)));
 [v _RA2 `Vb ~T0 @X0 0 e@98 ]
-<<<<<<< HEAD
-"4565
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4565:     struct {
-[s S222 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S222 . BF UA R_nW S P D_nA CKE SMP ]
-"4575
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4575:     struct {
-[s S223 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S223 . . R_W . D_A ]
-"4581
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4581:     struct {
-[s S224 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S224 . . nW . nA ]
-"4587
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4587:     struct {
-[s S225 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S225 . . nWRITE . nADDRESS ]
-"4593
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4593:     struct {
-[s S226 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S226 . . READ_WRITE . DATA_ADDRESS ]
-"4599
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4599:     struct {
-[s S227 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S227 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
-"4606
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4606:     struct {
-[s S228 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S228 . BF1 UA1 R START STOP D CKE1 SMP1 ]
-"4616
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4616:     struct {
-[s S229 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S229 . . RW START1 STOP1 DA ]
-"4623
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4623:     struct {
-[s S230 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S230 . . RW1 I2C_START1 I2C_STOP2 DA1 ]
-"4630
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4630:     struct {
-[s S231 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S231 . . I2C_READ1 S2 P2 DATA_ADDRESS1 ]
-"4637
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4637:     struct {
-[s S232 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S232 . . READ_WRITE1 . D_A1 ]
-"4643
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4643:     struct {
-[s S233 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S233 . . R_W1 . D_nA1 ]
-"4649
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4649:     struct {
-[s S234 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S234 . . R_nW1 . I2C_DAT1 ]
-"4655
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4655:     struct {
-[s S235 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S235 . . nW2 . nA2 ]
-"4661
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4661:     struct {
-[s S236 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S236 . . nWRITE1 . nADDRESS1 ]
-"4564
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4564: typedef union {
-[u S221 `S222 1 `S223 1 `S224 1 `S225 1 `S226 1 `S227 1 `S228 1 `S229 1 `S230 1 `S231 1 `S232 1 `S233 1 `S234 1 `S235 1 `S236 1 ]
-[n S221 . . . . . . . . . . . . . . . . ]
-"4668
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4668: extern volatile SSP1STATbits_t SSP1STATbits __attribute__((address(0x18F)));
-[v _SSP1STATbits `VS221 ~T0 @X0 0 e@399 ]
-"39599
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 39599: extern volatile __bit RA4 __attribute__((address(0x64)));
-[v _RA4 `Vb ~T0 @X0 0 e@100 ]
-=======
->>>>>>> f0e3c5596c7289895c280110a1d2ffecece017c8
 "5 ./slave/init_slave.h
 [; ;./slave/init_slave.h: 5: void slave_init(uint8_t address);
 [v _slave_init `(v ~T0 @X0 0 ef1`uc ]
-"39578 C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 39578: extern volatile __bit RA3 __attribute__((address(0x63)));
-[v _RA3 `Vb ~T0 @X0 0 e@99 ]
-"4929
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4929:     struct {
-[s S238 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S238 . SSPM CKP SSPEN SSPOV WCOL ]
-"4936
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4936:     struct {
-[s S239 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S239 . SSPM0 SSPM1 SSPM2 SSPM3 ]
-"4942
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4942:     struct {
-[s S240 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S240 . SSPM01 SSPM11 SSPM21 SSPM31 CKP1 SSPEN1 SSPOV1 WCOL1 ]
-"4928
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4928: typedef union {
-[u S237 `S238 1 `S239 1 `S240 1 ]
-[n S237 . . . . ]
-"4953
-[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 4953: extern volatile SSP1CON1bits_t SSP1CON1bits __attribute__((address(0x190)));
-[v _SSP1CON1bits `VS237 ~T0 @X0 0 e@400 ]
 "55 C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h
 [; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1696,151 +1598,71 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
-<<<<<<< HEAD
-=======
-"14
-[; ;main_mode.c: 14:     init();
-[e ( _init ..  ]
-"15
-[; ;main_mode.c: 15:     PORTA=0X00;
-[e = _PORTA -> -> 0 `i `uc ]
->>>>>>> f0e3c5596c7289895c280110a1d2ffecece017c8
 "16
 [; ;main_mode.c: 16:     init();
 [e ( _init ..  ]
 "17
-[; ;main_mode.c: 17:     if(ever_be_master==0x00){
-[e $ ! == -> _ever_be_master `i -> 0 `i 1563  ]
+[; ;main_mode.c: 17:     do{
+[e :U 1565 ]
 {
 "18
-[; ;main_mode.c: 18:         master_init();
+[; ;main_mode.c: 18:     master_init();
 [e ( _master_init ..  ]
 "21
-[; ;main_mode.c: 21:         I2C_Master_Start();
+[; ;main_mode.c: 21:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
 "22
-[; ;main_mode.c: 22:         I2C_Master_Write((0x67 << 1)|0);
+[; ;main_mode.c: 22:     I2C_Master_Write((0x67 << 1)|0);
 [e ( _I2C_Master_Write (1 -> | << -> 103 `i -> 1 `i -> 0 `i `uc ]
 "23
-[; ;main_mode.c: 23:         I2C_Master_Write(0xBC);
+[; ;main_mode.c: 23:     I2C_Master_Write(0xBC);
 [e ( _I2C_Master_Write (1 -> -> 188 `i `uc ]
 "24
-[; ;main_mode.c: 24:         I2C_Master_Stop();
+[; ;main_mode.c: 24:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "27
-[; ;main_mode.c: 27:         I2C_Master_Start();
+[; ;main_mode.c: 27:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
 "28
-[; ;main_mode.c: 28:         I2C_Master_Write((0x67 << 1)|1);
+[; ;main_mode.c: 28:     I2C_Master_Write((0x67 << 1)|1);
 [e ( _I2C_Master_Write (1 -> | << -> 103 `i -> 1 `i -> 1 `i `uc ]
-<<<<<<< HEAD
 "29
-[; ;main_mode.c: 29:         leader_feedback=I2C_Master_Read(0);
+[; ;main_mode.c: 29:     leader_feedback=I2C_Master_Read(0);
 [e = _leader_feedback ( _I2C_Master_Read (1 -> -> 0 `i `uc ]
 "30
-[; ;main_mode.c: 30:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"33
-[; ;main_mode.c: 33:         if(leader_feedback==0x5A){
-[e $ ! == -> _leader_feedback `i -> 90 `i 1564  ]
-{
-"34
-[; ;main_mode.c: 34:             RA2=1;
-[e = _RA2 -> -> 1 `i `b ]
-"35
-[; ;main_mode.c: 35:             ever_be_master=0x01;
-[e = _ever_be_master -> -> 1 `i `uc ]
-"36
-[; ;main_mode.c: 36:         }
-}
-[e :U 1564 ]
-"38
-[; ;main_mode.c: 38:         if(SSP1STATbits.S==1) RA4=1;
-[e $ ! == -> . . _SSP1STATbits 0 3 `i -> 1 `i 1565  ]
-[e = _RA4 -> -> 1 `i `b ]
-[e :U 1565 ]
-"39
-[; ;main_mode.c: 39:         RA4=0;
-[e = _RA4 -> -> 0 `i `b ]
-"40
-[; ;main_mode.c: 40:     }
-}
-[e $U 1566  ]
-"41
-[; ;main_mode.c: 41:     else if(ever_be_master==0x01){
-[e :U 1563 ]
-[e $ ! == -> _ever_be_master `i -> 1 `i 1567  ]
-{
-"43
-[; ;main_mode.c: 43:         slave_init(leader_feedback);
-[e ( _slave_init (1 _leader_feedback ]
-"46
-[; ;main_mode.c: 46:     }
-}
-[e :U 1567 ]
-[e :U 1566 ]
-"49
-[; ;main_mode.c: 49:     while(1);
-[e :U 1569 ]
-[e :U 1568 ]
-[e $U 1569  ]
-[e :U 1570 ]
-"50
-[; ;main_mode.c: 50: }
-=======
-"27
-[; ;main_mode.c: 27:     leader_feedback=I2C_Master_Read(1);
-[e = _leader_feedback ( _I2C_Master_Read (1 -> -> 1 `i `uc ]
-"28
-[; ;main_mode.c: 28:     I2C_Master_Stop();
+[; ;main_mode.c: 30:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "31
-[; ;main_mode.c: 31:     if(leader_feedback==0x5A){
-[e $ ! == -> _leader_feedback `i -> 90 `i 1563  ]
+[; ;main_mode.c: 31:     }while(leader_feedback!=0x5A);
+}
+[e $ != -> _leader_feedback `i -> 90 `i 1565  ]
+[e :U 1564 ]
+"33
+[; ;main_mode.c: 33:     while(leader_feedback==0x5A){
+[e $U 1566  ]
+[e :U 1567 ]
 {
-"32
-[; ;main_mode.c: 32:         RA2=1;
-[e = _RA2 -> -> 1 `i `b ]
 "34
-[; ;main_mode.c: 34:         init();
-[e ( _init ..  ]
+[; ;main_mode.c: 34:         RA2=1;
+[e = _RA2 -> -> 1 `i `b ]
 "35
 [; ;main_mode.c: 35:         slave_init(leader_feedback);
 [e ( _slave_init (1 _leader_feedback ]
-"36
-[; ;main_mode.c: 36:         RA3=1;
-[e = _RA3 -> -> 1 `i `b ]
-"37
-[; ;main_mode.c: 37:         for(int i=0;i<=4000;i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ <= _i -> 4000 `i 1564  ]
-[e $U 1565  ]
-[e :U 1564 ]
-{
 "38
-[; ;main_mode.c: 38:             SSP1CON1bits.CKP = 0;
-[e = . . _SSP1CON1bits 0 1 -> -> 0 `i `uc ]
-"39
-[; ;main_mode.c: 39:         }
+[; ;main_mode.c: 38:     }
 }
-[e ++ _i -> 1 `i ]
-[e $ <= _i -> 4000 `i 1564  ]
-[e :U 1565 ]
-}
-"40
-[; ;main_mode.c: 40:     }
-}
-[e :U 1563 ]
-"44
-[; ;main_mode.c: 44:     while(1);
+[e :U 1566 ]
+"33
+[; ;main_mode.c: 33:     while(leader_feedback==0x5A){
+[e $ == -> _leader_feedback `i -> 90 `i 1567  ]
 [e :U 1568 ]
-[e :U 1567 ]
-[e $U 1568  ]
+"40
+[; ;main_mode.c: 40:     while(1);
+[e :U 1570 ]
 [e :U 1569 ]
-"45
-[; ;main_mode.c: 45: }
->>>>>>> f0e3c5596c7289895c280110a1d2ffecece017c8
+[e $U 1570  ]
+[e :U 1571 ]
+"41
+[; ;main_mode.c: 41: }
 [e :UE 1562 ]
 }

@@ -19809,67 +19809,30 @@ uint8_t leader_feedback=0x00;
 uint8_t ever_be_master=0x00;
 
 void main(void) {
-<<<<<<< HEAD
 
     init();
-    if(ever_be_master==0x00){
-        master_init();
-=======
-    init();
-    PORTA=0X00;
+    do{
     master_init();
->>>>>>> f0e3c5596c7289895c280110a1d2ffecece017c8
 
 
-        I2C_Master_Start();
-        I2C_Master_Write((0x67 << 1)|0);
-        I2C_Master_Write(0xBC);
-        I2C_Master_Stop();
-
-
-<<<<<<< HEAD
-        I2C_Master_Start();
-        I2C_Master_Write((0x67 << 1)|1);
-        leader_feedback=I2C_Master_Read(0);
-        I2C_Master_Stop();
-
-
-        if(leader_feedback==0x5A){
-            RA2=1;
-            ever_be_master=0x01;
-        }
-=======
     I2C_Master_Start();
-    I2C_Master_Write((0x67 << 1)|1);
-    leader_feedback=I2C_Master_Read(1);
+    I2C_Master_Write((0x67 << 1)|0);
+    I2C_Master_Write(0xBC);
     I2C_Master_Stop();
 
 
-    if(leader_feedback==0x5A){
+    I2C_Master_Start();
+    I2C_Master_Write((0x67 << 1)|1);
+    leader_feedback=I2C_Master_Read(0);
+    I2C_Master_Stop();
+    }while(leader_feedback!=0x5A);
+
+    while(leader_feedback==0x5A){
         RA2=1;
-
-        init();
-        slave_init(leader_feedback);
-        RA3=1;
-        for(int i=0;i<=4000;i++){
-            SSP1CON1bits.CKP = 0;
-        }
-    }
->>>>>>> f0e3c5596c7289895c280110a1d2ffecece017c8
-
-        if(SSP1STATbits.S==1) RA4=1;
-        RA4=0;
-    }
-    else if(ever_be_master==0x01){
-
-<<<<<<< HEAD
         slave_init(leader_feedback);
 
 
     }
-
-=======
->>>>>>> f0e3c5596c7289895c280110a1d2ffecece017c8
 
     while(1);
 }
