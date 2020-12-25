@@ -19773,4 +19773,5 @@ void slave_init(uint8_t address){
     PIR3bits.BCL1IF = 0;
     PIE3bits.SSP1IE = 1;
     PIE3bits.BCL1IE = 1;
+    RA2=1;
 }

@@ -59,6 +59,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21588
 [; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 21588: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x719)));
 [v _PIE3bits `VS980 ~T0 @X0 0 e@1817 ]
+"39557
+[; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 39557: extern volatile __bit RA2 __attribute__((address(0x62)));
+[v _RA2 `Vb ~T0 @X0 0 e@98 ]
 "55 C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h
 [; ;C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1660,6 +1663,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;slave/init_slave.c: 18:     PIE3bits.BCL1IE = 1;
 [e = . . _PIE3bits 0 1 -> -> 1 `i `uc ]
 "19
-[; ;slave/init_slave.c: 19: }
+[; ;slave/init_slave.c: 19:     RA2=1;
+[e = _RA2 -> -> 1 `i `b ]
+"20
+[; ;slave/init_slave.c: 20: }
 [e :UE 1562 ]
 }

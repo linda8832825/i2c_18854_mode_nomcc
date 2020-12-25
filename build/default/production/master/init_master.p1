@@ -1636,7 +1636,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _master_init ]
 [f ]
 "5
-[; ;master/init_master.c: 5:     SSP1CON1=0b00101000;
+[; ;master/init_master.c: 5:     SSP1CON1=0x28;
 [e = _SSP1CON1 -> -> 40 `i `uc ]
 "6
 [; ;master/init_master.c: 6:     SSP1CON2=0x00;

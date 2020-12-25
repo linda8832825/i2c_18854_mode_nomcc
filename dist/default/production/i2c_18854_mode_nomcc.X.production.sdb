@@ -176,7 +176,7 @@
 [v _SSP1CON1bits SSP1CON1bits `VES113  1 e 1 @400 ]
 "5043
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @401 ]
-[s S540 . 1 `uc 1 SEN 1 0 :1:0 
+[s S541 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -186,17 +186,17 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "5090
-[s S549 . 1 `uc 1 . 1 0 :1:0 
+[s S550 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK 1 0 :5:1 
 ]
-[s S552 . 1 `uc 1 . 1 0 :1:0 
+[s S553 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S559 . 1 `uc 1 SEN1 1 0 :1:0 
+[s S560 . 1 `uc 1 SEN1 1 0 :1:0 
 `uc 1 ADMSK11 1 0 :1:1 
 `uc 1 ADMSK21 1 0 :1:2 
 `uc 1 ADMSK31 1 0 :1:3 
@@ -205,15 +205,15 @@
 `uc 1 ACKSTAT1 1 0 :1:6 
 `uc 1 GCEN1 1 0 :1:7 
 ]
-[s S568 . 1 `uc 1 . 1 0 :1:0 
+[s S569 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN1 1 0 :1:1 
 `uc 1 PEN1 1 0 :1:2 
 `uc 1 RCEN1 1 0 :1:3 
 `uc 1 ADMSK41 1 0 :1:4 
 `uc 1 ADMSK51 1 0 :1:5 
 ]
-[u S575 . 1 `S540 1 . 1 0 `S549 1 . 1 0 `S552 1 . 1 0 `S559 1 . 1 0 `S568 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES575  1 e 1 @401 ]
+[u S576 . 1 `S541 1 . 1 0 `S550 1 . 1 0 `S553 1 . 1 0 `S560 1 . 1 0 `S569 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES576  1 e 1 @401 ]
 "5230
 [v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @402 ]
 [s S362 . 1 `uc 1 DHEN 1 0 :1:0 
@@ -332,7 +332,7 @@
 [v slave_init@address address `uc  1 a 1 wreg ]
 [v slave_init@address address `uc  1 a 1 wreg ]
 [v slave_init@address address `uc  1 a 1 1 ]
-"19
+"20
 } 0
 "4 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X\master/init_master.c
 [v _master_init master_init `(v  1 e 1 0 ]

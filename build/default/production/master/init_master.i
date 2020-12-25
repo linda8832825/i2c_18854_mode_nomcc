@@ -19761,7 +19761,7 @@ void master_init(void);
 
 
 void master_init(void){
-    SSP1CON1=0b00101000;
+    SSP1CON1=0x28;
     SSP1CON2=0x00;
     SSP1STATbits.SMP=1;
     SSP1STATbits.CKE=1;
