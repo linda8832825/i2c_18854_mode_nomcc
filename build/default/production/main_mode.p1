@@ -1577,9 +1577,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _z `uc ~T0 @X0 1 e ]
 [v _y `uc ~T0 @X0 1 e ]
 "11 main_mode.c
-[; ;main_mode.c: 11: uint8_t leader_feedback=0x00;
-[v _leader_feedback `uc ~T0 @X0 1 e ]
-[i _leader_feedback
+[; ;main_mode.c: 11: uint8_t mode_id=0x00;
+[v _mode_id `uc ~T0 @X0 1 e ]
+[i _mode_id
 -> -> 0 `i `uc
 ]
 "12
@@ -1599,64 +1599,71 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_mode.c: 15:     init();
 [e ( _init ..  ]
 "17
-[; ;main_mode.c: 17:     do{
-[e :U 1565 ]
+[; ;main_mode.c: 17:         while(ever_be_master == 0x00){
+[e $U 1563  ]
+[e :U 1564 ]
 {
 "18
-[; ;main_mode.c: 18:         master_init();
+[; ;main_mode.c: 18:             master_init();
 [e ( _master_init ..  ]
 "21
-[; ;main_mode.c: 21:         I2C_Master_Start();
+[; ;main_mode.c: 21:             I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
 "22
-[; ;main_mode.c: 22:         I2C_Master_Write((0x67 << 1)|0);
+[; ;main_mode.c: 22:             I2C_Master_Write((0x67 << 1)|0);
 [e ( _I2C_Master_Write (1 -> | << -> 103 `i -> 1 `i -> 0 `i `uc ]
 "23
-[; ;main_mode.c: 23:         I2C_Master_Write(0xBC);
+[; ;main_mode.c: 23:             I2C_Master_Write(0xBC);
 [e ( _I2C_Master_Write (1 -> -> 188 `i `uc ]
 "24
-[; ;main_mode.c: 24:         I2C_Master_Stop();
+[; ;main_mode.c: 24:             I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "27
-[; ;main_mode.c: 27:         I2C_Master_Start();
+[; ;main_mode.c: 27:             I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
 "28
-[; ;main_mode.c: 28:         I2C_Master_Write((0x67 << 1)|1);
+[; ;main_mode.c: 28:             I2C_Master_Write((0x67 << 1)|1);
 [e ( _I2C_Master_Write (1 -> | << -> 103 `i -> 1 `i -> 1 `i `uc ]
 "29
-[; ;main_mode.c: 29:         leader_feedback=I2C_Master_Read(0);
-[e = _leader_feedback ( _I2C_Master_Read (1 -> -> 0 `i `uc ]
+[; ;main_mode.c: 29:             mode_id=I2C_Master_Read(0);
+[e = _mode_id ( _I2C_Master_Read (1 -> -> 0 `i `uc ]
 "30
-[; ;main_mode.c: 30:         I2C_Master_Stop();
+[; ;main_mode.c: 30:             I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"32
-[; ;main_mode.c: 32:     }while(leader_feedback!=0x5A);
-}
-[e $ != -> _leader_feedback `i -> 90 `i 1565  ]
-[e :U 1564 ]
+"33
+[; ;main_mode.c: 33:             ever_be_master = 0x01;
+[e = _ever_be_master -> -> 1 `i `uc ]
 "34
-[; ;main_mode.c: 34:     while(leader_feedback==0x5A){
+[; ;main_mode.c: 34:         }
+}
+[e :U 1563 ]
+"17
+[; ;main_mode.c: 17:         while(ever_be_master == 0x00){
+[e $ == -> _ever_be_master `i -> 0 `i 1564  ]
+[e :U 1565 ]
+"36
+[; ;main_mode.c: 36:         while(ever_be_master == 0x01){
 [e $U 1566  ]
 [e :U 1567 ]
 {
-"35
-[; ;main_mode.c: 35:         slave_init(leader_feedback);
-[e ( _slave_init (1 _leader_feedback ]
-"38
-[; ;main_mode.c: 38:     }
+"37
+[; ;main_mode.c: 37:             slave_init(mode_id);
+[e ( _slave_init (1 _mode_id ]
+"40
+[; ;main_mode.c: 40:         }
 }
 [e :U 1566 ]
-"34
-[; ;main_mode.c: 34:     while(leader_feedback==0x5A){
-[e $ == -> _leader_feedback `i -> 90 `i 1567  ]
+"36
+[; ;main_mode.c: 36:         while(ever_be_master == 0x01){
+[e $ == -> _ever_be_master `i -> 1 `i 1567  ]
 [e :U 1568 ]
-"40
-[; ;main_mode.c: 40:     while(1);
+"42
+[; ;main_mode.c: 42:     while(1);
 [e :U 1570 ]
 [e :U 1569 ]
 [e $U 1570  ]
 [e :U 1571 ]
-"41
-[; ;main_mode.c: 41: }
+"43
+[; ;main_mode.c: 43: }
 [e :UE 1562 ]
 }

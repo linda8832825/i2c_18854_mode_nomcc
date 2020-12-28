@@ -19501,10 +19501,6 @@ extern volatile __bit nWRITE1 __attribute__((address(0xC7A)));
 extern volatile __bit nWRITE2 __attribute__((address(0xCCA)));
 # 1 "slave/init_slave.c" 2
 
-# 1 "slave/init_slave.h" 1
-
-
-
 # 1 "C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -19752,26 +19748,31 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 2 3
-# 4 "slave/init_slave.h" 2
+# 2 "slave/init_slave.c" 2
+
+# 1 "slave/init_slave.h" 1
+
+
+
 
 void slave_init(uint8_t address);
-# 2 "slave/init_slave.c" 2
+# 3 "slave/init_slave.c" 2
 
 
 void slave_init(uint8_t address){
-    SSP1STAT = 0xC0;
-    SSP1ADD = (uint8_t)(address<<1);
-    SSP1MSK = 0xFF;
-    SSP1CON1 = 0x26;
-    SSP1CON2 = 0x01;
-    SSP1CON3 = 0x00;
-    SSP1CON3bits.BOEN=1;
-    SSP1BUF = 0x00;
-    GIE = 1;
-    PEIE = 1;
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
     PIR3bits.SSP1IF = 0;
     PIR3bits.BCL1IF = 0;
     PIE3bits.SSP1IE = 1;
     PIE3bits.BCL1IE = 1;
+    SSP1STAT = 0xC0;
+    SSP1ADD = (uint8_t)(address<<1);
+    SSP1MSK = 0xFF;
+    SSP1CON1 = 0x36;
+    SSP1CON2 = 0x01;
+    SSP1CON3 = 0x00;
+    SSP1CON3bits.BOEN=1;
+    SSP1BUF = 0x00;
     RA2=1;
 }
