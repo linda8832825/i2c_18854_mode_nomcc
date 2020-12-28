@@ -19,7 +19,7 @@
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
 "41
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"14 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X\main_mode.c
+"17 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X\main_mode.c
 [v _main main `(v  1 e 1 0 ]
 "4 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X\master/i2c_master.c
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
@@ -326,11 +326,13 @@
 "11 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X\main_mode.c
 [v _mode_id mode_id `uc  1 e 1 0 ]
 "12
-[v _ever_be_master ever_be_master `uc  1 e 1 0 ]
-"14
+[v _be_master be_master `uc  1 e 1 0 ]
+"13
+[v _init_be_slave init_be_slave `uc  1 e 1 0 ]
+"17
 [v _main main `(v  1 e 1 0 ]
 {
-"43
+"57
 } 0
 "5 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X\slave/init_slave.c
 [v _slave_init slave_init `(v  1 e 1 0 ]
