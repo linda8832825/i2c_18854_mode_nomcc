@@ -8,7 +8,7 @@
 #define LEADER_ID 0x67
 #define single 0xBC //要傳給leader的值
 
-uint8_t mode_id=0x00;
+uint8_t mode_id=0x01;
 uint8_t be_master=0x00; //0=初始 1=master 2=slave
 uint8_t init_be_slave=0x00; //0=slave 1=master
 
@@ -20,21 +20,25 @@ void main(void) {
     while(1){
     
 
-    while((be_master == 0x02)||(init_be_slave==0x00)){//slave
+    if(init_be_slave==0x00){//初始 slave
+        slave_init(mode_id);//將編號設為成為slave的mode的ID    RA2=1
+        
+        //如果這段時間過完，就轉成master
+        for(i=0;i<=1000;i++){//27ms
+        if(i==999){
+            init_be_slave=0x01;
+            be_master=0x01; //master
+            RA0=1;
+        }}
+    }
+    
+    else if(be_master == 0x02){//之後的 slave
         slave_init(mode_id);//將編號設為成為slave的mode的ID    RA2=1
 
         //將資料(0xDB)傳給leader
-        
-        //如果這段時間過完，就轉成master
-//        for(i=0;i<=10;i++);
-//        if(i==9){
-            init_be_slave=0x01;
-            be_master=0x01;
-            RA2=0;
-//        }
     }
     
-    while(be_master == 0x01){//master
+    else if(be_master == 0x01){//master
         master_init();
 
         //發信號給leader(slave)

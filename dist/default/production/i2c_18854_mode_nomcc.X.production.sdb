@@ -320,7 +320,9 @@
 [v _WPUE WPUE `VEuc  1 e 1 @3941 ]
 "34609
 [v _INLVLE INLVLE `VEuc  1 e 1 @3944 ]
-"39557
+"39515
+"39515
+[v _RA0 RA0 `VEb  1 e 0 @96 ]
 "39557
 [v _RA2 RA2 `VEb  1 e 0 @98 ]
 "11 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X\main_mode.c
@@ -329,10 +331,12 @@
 [v _be_master be_master `uc  1 e 1 0 ]
 "13
 [v _init_be_slave init_be_slave `uc  1 e 1 0 ]
+"15
+[v _i i `i  1 e 2 0 ]
 "17
 [v _main main `(v  1 e 1 0 ]
 {
-"57
+"61
 } 0
 "5 C:\Users\linda\MPLABXProjects\i2c_18854_mode_nomcc.X\slave/init_slave.c
 [v _slave_init slave_init `(v  1 e 1 0 ]
